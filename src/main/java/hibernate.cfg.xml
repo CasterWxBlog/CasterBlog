@@ -15,6 +15,7 @@
 		<property name="hibernate.hbm2ddl.auto">update</property>
 		<!--一个关联映射文件-->
 		<mapping resource="blog/domain/User.hbm.xml"/>
+		<mapping resource="blog/domain/LogData.hbm.xml"/>
 		<mapping resource="blog/domain/BlogMarkDown.hbm.xml"/>
 	</session-factory>
 </hibernate-configuration>

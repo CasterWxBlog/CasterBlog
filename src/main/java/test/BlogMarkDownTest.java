@@ -9,14 +9,14 @@ import org.junit.jupiter.api.Test;
  * @company Henu
  * @create 2018-11-30-15:04
  */
-public class BlogMarkDown {
+public class BlogMarkDownTest {
     @Test
     public void blogSaveTest(){
         BlogMarkDownDaoImpl blogMarkDownDao = new BlogMarkDownDaoImpl() ;
         blog.domain.BlogMarkDown blogMarkDown = new blog.domain.BlogMarkDown() ;
-        blogMarkDown.setId(1);
+        blogMarkDown.setId(3);
         blogMarkDown.setTitle("基于MFC的指纹识别系统");
-        blogMarkDown.setLocalurl("/list/detail1.jsp");
+        blogMarkDown.setLocalurl("/list/detail2.jsp");
         blogMarkDown.setAuthor("CasterWx");
         blogMarkDown.setImgurl("../images/cover/201703181909057125.jpg");
         blogMarkDown.setLocal("C++,MFC");
