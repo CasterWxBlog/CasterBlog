@@ -11,7 +11,7 @@
     <meta http-equiv="Content-Type" content="text/html; Charset=gb2312">
     <meta http-equiv="Content-Language" content="zh-CN">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <title>不落阁 - 点点滴滴 - 时光轴</title>
+    <title>CasterWx - 一群肥宅的博客网站</title>
     <link rel="shortcut icon" href="../images/Logo_40.png" type="image/x-icon">
     <!--Layui-->
     <link href="../plug/layui/css/layui.css" rel="stylesheet" />
@@ -35,24 +35,24 @@
         <a href="javascript:;" class="blog-user layui-hide">
             <img src="../images/Absolutely.jpg" alt="Absolutely" title="Absolutely" />
         </a>
-        <!-- 不落阁 -->
-        <a class="blog-logo" href="home.html">不落阁</a>
+        <!-- CasterWx -->
+        <a class="blog-logo" href="/home">CasterWx</a>
         <!-- 导航菜单 -->
         <ul class="layui-nav" lay-filter="nav">
-            <li class="layui-nav-item">
-                <a href="home.html"><i class="fa fa-home fa-fw"></i>&nbsp;网站首页</a>
-            </li>
-            <li class="layui-nav-item">
-                <a href="article.html"><i class="fa fa-file-text fa-fw"></i>&nbsp;文章专栏</a>
-            </li>
-            <li class="layui-nav-item">
-                <a href="resource.html"><i class="fa fa-tags fa-fw"></i>&nbsp;资源分享</a>
-            </li>
             <li class="layui-nav-item layui-this">
-                <a href="timeline.html"><i class="fa fa-hourglass-half fa-fw"></i>&nbsp;点点滴滴</a>
+                <a href="/home"><i class="fa fa-home fa-fw"></i>&nbsp;网站首页</a>
             </li>
             <li class="layui-nav-item">
-                <a href="about.html"><i class="fa fa-info fa-fw"></i>&nbsp;关于本站</a>
+                <a href="/article"><i class="fa fa-file-text fa-fw"></i>&nbsp;文章专栏</a>
+            </li>
+            <li class="layui-nav-item">
+                <a href="/resource"><i class="fa fa-tags fa-fw"></i>&nbsp;资源分享</a>
+            </li>
+            <li class="layui-nav-item">
+                <a href="/timeline"><i class="fa fa-hourglass-half fa-fw"></i>&nbsp;点点滴滴</a>
+            </li>
+            <li class="layui-nav-item">
+                <a href="/about"><i class="fa fa-info fa-fw"></i>&nbsp;关于本站</a>
             </li>
         </ul>
         <!-- 手机和平板的导航开关 -->
@@ -65,8 +65,8 @@
 <div class="blog-body">
     <div class="blog-container">
         <blockquote class="layui-elem-quote sitemap layui-breadcrumb shadow">
-            <a href="home.html" title="网站首页">网站首页</a>
-            <a href="timeline.html" title="点点滴滴">点点滴滴</a>
+            <a href="/home" title="网站首页">网站首页</a>
+            <a href="/timeline" title="点点滴滴">点点滴滴</a>
             <a><cite>时光轴</cite></a>
         </blockquote>
         <div class="blog-main">
@@ -208,25 +208,25 @@
 </div>
 <!-- 底部 -->
 <footer class="blog-footer">
-    <p><span>Copyright</span><span>&copy;</span><span>2017</span><a href="http://www.lyblogs.cn">不落阁</a><span>Design By LY</span></p>
-    <p><a href="http://www.miibeian.gov.cn/" target="_blank">蜀ICP备16029915号-1</a></p>
+    <p><span>Copyright</span><span>&copy;</span><span>2018</span><a href="https://github.com/CasterWx">CasterWx</a><span> By AntzUhl</span></p>
+    <p><a href="http://www.github.com/CasterWx" target="_blank">@CasterWx</a></p>
 </footer>
 <!--侧边导航-->
 <ul class="layui-nav layui-nav-tree layui-nav-side blog-nav-left layui-hide" lay-filter="nav">
-    <li class="layui-nav-item">
-        <a href="home.html"><i class="fa fa-home fa-fw"></i>&nbsp;网站首页</a>
-    </li>
-    <li class="layui-nav-item">
-        <a href="article.html"><i class="fa fa-file-text fa-fw"></i>&nbsp;文章专栏</a>
-    </li>
-    <li class="layui-nav-item">
-        <a href="resource.html"><i class="fa fa-tags fa-fw"></i>&nbsp;资源分享</a>
-    </li>
     <li class="layui-nav-item layui-this">
-        <a href="timeline.html"><i class="fa fa-road fa-fw"></i>&nbsp;点点滴滴</a>
+        <a href="/home"><i class="fa fa-home fa-fw"></i>&nbsp;网站首页</a>
     </li>
     <li class="layui-nav-item">
-        <a href="about.html"><i class="fa fa-info fa-fw"></i>&nbsp;关于本站</a>
+        <a href="/article"><i class="fa fa-file-text fa-fw"></i>&nbsp;文章专栏</a>
+    </li>
+    <li class="layui-nav-item">
+        <a href="/resource"><i class="fa fa-tags fa-fw"></i>&nbsp;资源分享</a>
+    </li>
+    <li class="layui-nav-item">
+        <a href="/timeline"><i class="fa fa-road fa-fw"></i>&nbsp;点点滴滴</a>
+    </li>
+    <li class="layui-nav-item">
+        <a href="/about"><i class="fa fa-info fa-fw"></i>&nbsp;关于本站</a>
     </li>
 </ul>
 <!--分享窗体-->
@@ -242,6 +242,37 @@
         </div>
     </div>
 </div>
+<link rel="stylesheet" href="../aplayer/APlayer.min.css">
+<div id="aplayer" style="align:center;width:500px;position:fixed; bottom:0; z-index:999;  overflow:visible;">
+</div>
+<script src="../aplayer/APlayer.min.js"></script>
+<script>
+    const ap = new APlayer({
+        container: document.getElementById('aplayer'),
+        audio: [{
+            name: 'カサネテク',
+            artist: '中关村二',
+            url: '../aplayer/music.mp3',
+            cover:  'http://p2.music.126.net/AWXPd_GVXCzUocAMyatE5Q==/760862046442975.jpg?param=130y130'
+        }]
+    });
+    const dp = new DPlayer({
+        container: document.getElementById('dplayer'),
+        screenshot: true,
+        video: {
+            url: 'https://moeplayer.b0.upaiyun.com/dplayer/hikarunara.mp4',
+            pic: 'demo.jpg',
+            thumbnails: 'thumbnails.jpg'
+        },
+        subtitle: {
+            url: 'webvtt.vtt'
+        },
+        danmaku: {
+            id: 'demo',
+            api: 'https://api.prprpr.me/dplayer/v3/bilibili?aid=4124125'
+        }
+    });
+</script>
 <!--遮罩-->
 <div class="blog-mask animated layui-hide"></div>
 <!-- layui.js -->

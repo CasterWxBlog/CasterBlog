@@ -92,8 +92,21 @@
                 </div>
             </div>
             <!--左边文章列表-->
-
             <div class="blog-main-left">
+                <div class="article shadow">
+                    <link rel="stylesheet" href="../dplayer/DPlayer.min.css">
+                    <div id="dplayer" style="width: 700px;height:400px;"></div>
+                    <script src="../dplayer/DPlayer.min.js"></script>
+                    <div class="clear"></div>
+                    <%-- time --%>
+                    <div class="article-footer">
+                        <span><i class="fa fa-clock-o"></i>&nbsp;&nbsp;2018-11-30</span>
+                        <span class="article-author"><i class="fa fa-user"></i>&nbsp;&nbsp;CasterWx</span>
+                        <span><i class="fa fa-tag"></i>&nbsp;&nbsp;<a href="#">BiliBili,休闲</a></span>
+                        <span class="article-viewinfo"><i class="fa fa-eye"></i>&nbsp;205</span>   <%--review--%>
+                        <span class="article-viewinfo"><i class="fa fa-commenting"></i>&nbsp;5</span> <%--留言--%>
+                    </div>
+                </div>
             <%
                 BlogMarkDownDaoImpl blogMarkDownDao = new BlogMarkDownDaoImpl() ;
                 List<BlogMarkDown> list = blogMarkDownDao.listAll();
@@ -108,7 +121,7 @@
                             <a href="<%=list.get(i).getLocalurl()%>"><%=list.get(i).getTitle()%></a>
                         </div>
                         <div class="article-abstract">
-                            <%=list.get(i).getCode()%>
+                            <%=list.get(i).getCode()%><a href="<%=list.get(i).getLocalurl()%>"> <font color="#008b8b">浏览更多</font></a>
                         </div>
                     </div>
                     <div class="clear"></div>
@@ -253,6 +266,22 @@
             url: '../aplayer/music.mp3',
             cover:  'http://p2.music.126.net/AWXPd_GVXCzUocAMyatE5Q==/760862046442975.jpg?param=130y130'
         }]
+    });
+    const dp = new DPlayer({
+        container: document.getElementById('dplayer'),
+        screenshot: true,
+        video: {
+            url: 'https://moeplayer.b0.upaiyun.com/dplayer/hikarunara.mp4',
+            pic: 'demo.jpg',
+            thumbnails: 'thumbnails.jpg'
+        },
+        subtitle: {
+            url: 'webvtt.vtt'
+        },
+        danmaku: {
+            id: 'demo',
+            api: 'https://api.prprpr.me/dplayer/v3/bilibili?aid=4124125'
+        }
     });
 </script>
 <!--遮罩-->

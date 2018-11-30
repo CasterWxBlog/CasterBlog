@@ -1,12 +1,4 @@
-﻿/*
-
-@Name：不落阁整站模板源码 
-@Author：Absolutely 
-@Site：http://www.lyblogs.cn
-
-*/
-
-layui.use(['element', 'layer', 'util', 'form'], function () {
+﻿layui.use(['element', 'layer', 'util', 'form'], function () {
     var $ = layui.jquery;
     //模拟QQ登陆
     $('.blog-user').click(function () {

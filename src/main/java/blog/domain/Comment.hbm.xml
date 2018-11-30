@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="blog.domain">
+	<class name="BlogMarkDown" table="t_blog">
+		<id name="id" type="java.lang.Integer" column="id">
+			<generator class="native"/>
+		</id>
+		<property name="title" column="title"/>
+		<property name="author" column="author"/>
+		<property name="localurl" column="localurl"/>
+		<property name="imgurl" column="imgurl"/>
+		<property name="time" column="time"/>
+		<property name="local" column="local"/>
+		<property name="review" column="review"/>
+		<property name="memage" column="memage"/>
+		<property name="code" column="code"/>
+	</class>
+</hibernate-mapping>

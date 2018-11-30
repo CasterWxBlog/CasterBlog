@@ -1,10 +1,12 @@
 <%@ page import="blog.dao.impl.BlogMarkDownDaoImpl" %>
 <%@ page import="blog.domain.BlogMarkDown" %>
-<%@ page import="java.util.List" %><%--
+<%@ page import="java.util.List" %>
+<%@ page import="blog.dao.impl.CommentImpl" %>
+<%@ page import="blog.domain.Comment" %><%--
   Created by IntelliJ IDEA.
   User: 13252
   Date: 2018/11/30
-  Time: 9:26
+  Time: 9:28
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -21,8 +23,12 @@
     <link href="../plug/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
     <!--全局样式表-->
     <link href="../css/global.css" rel="stylesheet" />
-    <!--本页样式表-->
-    <link href="../css/article.css" rel="stylesheet" />
+    <!-- 比较好用的代码着色插件 -->
+    <link href="../css/prettify.css" rel="stylesheet" />
+    <!-- 本页样式表 -->
+    <link href="../css/detail.css" rel="stylesheet" />
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
+    <script src="../js/showdown.js"></script>
 </head>
 <body>
 <!-- 导航 -->
@@ -62,61 +68,79 @@
     </div>
 </nav>
 <!-- 主体（一般只改变这里的内容） -->
+<%
+    BlogMarkDownDaoImpl blogMarkDownDao = new BlogMarkDownDaoImpl();
+    List<BlogMarkDown> blogMarkDowns = blogMarkDownDao.listAll() ;
+    BlogMarkDown blogMarkDown = blogMarkDowns.get(0);
+%>
 <div class="blog-body">
     <div class="blog-container">
         <blockquote class="layui-elem-quote sitemap layui-breadcrumb shadow">
             <a href="/home" title="网站首页">网站首页</a>
-            <a><cite>文章专栏</cite></a>
+            <a href="/article" title="文章专栏">文章专栏</a>
+            <a><cite></cite></a>
         </blockquote>
         <div class="blog-main">
             <div class="blog-main-left">
-                <div class="shadow" style="text-align:center;font-size:16px;padding:40px 15px;background:#fff;margin-bottom:15px;">
-                    未搜索到与【<span style="color: #FF5722;">keywords</span>】有关的文章，随便看看吧！
-                </div>
-                <%
-                    BlogMarkDownDaoImpl blogMarkDownDao = new BlogMarkDownDaoImpl() ;
-                    List<BlogMarkDown> list = blogMarkDownDao.listAll();
-                    for(int i=0;i<list.size();i++){
-                %>
-                <div class="article shadow">
-                    <div class="article-left">
-                        <img src="<%=list.get(i).getImgurl()%>" alt="点击查看" />
+                <!-- 文章内容（使用Kingeditor富文本编辑器发表的） -->
+                <div class="article-detail shadow">
+                    <div class="article-detail-title">
+                        <%=blogMarkDown.getTitle()%>
                     </div>
-                    <div class="article-right">
-                        <div class="article-title">
-                            <a href="<%=list.get(i).getLocalurl()%>"><%=list.get(i).getTitle()%></a>
-                        </div>
-                        <div class="article-abstract">
-                            <%=list.get(i).getCode()%>
-                        </div>
+                    <div class="article-detail-info">
+                        <span>编辑时间：<%=blogMarkDown.getTime()%></span>
+                        <span>作者：<%=blogMarkDown.getAuthor()%></span>
+                        <span>浏览量：<%=blogMarkDown.getReview()%></span>
                     </div>
-                    <div class="clear"></div>
-                    <%-- time --%>
-                    <div class="article-footer">
-                        <span><i class="fa fa-clock-o"></i>&nbsp;&nbsp;<%=list.get(i).getTime()%></span>
-                        <span class="article-author"><i class="fa fa-user"></i>&nbsp;&nbsp;<%=list.get(i).getAuthor()%></span>
-                        <span><i class="fa fa-tag"></i>&nbsp;&nbsp;<a href="#"><%=list.get(i).getLocal()%></a></span>
-                        <span class="article-viewinfo"><i class="fa fa-eye"></i>&nbsp;<%=list.get(i).getReview()%></span>   <%--review--%>
-                        <span class="article-viewinfo"><i class="fa fa-commenting"></i>&nbsp;<%=list.get(i).getMemage()%></span> <%--留言--%>
+                    <div class="article-detail-content">
+                        <div id="result"></div>
                     </div>
                 </div>
-                <%
-                    }
-                %>
+                <!-- 评论区域 -->
+                <div class="blog-module shadow" style="box-shadow: 0 1px 8px #a6a6a6;">
+                    <fieldset class="layui-elem-field layui-field-title" style="margin-bottom:0">
+                        <legend>来说两句吧</legend>
+                        <div class="layui-field-box">
+                            <form class="layui-form blog-editor" action="">
+                                <div class="layui-form-item">
+                                    <textarea name="editorContent" lay-verify="content" id="remarkEditor" placeholder="请输入内容" class="layui-textarea layui-hide"></textarea>
+                                </div>
+                                <div class="layui-form-item">
+                                    <button class="layui-btn" lay-submit="formRemark" lay-filter="formRemark">提交评论</button>
+                                </div>
+                            </form>
+                        </div>
+                    </fieldset>
+                    <div class="blog-module-title">最新评论</div>
+                    <ul class="blog-comment">
+                        <li>
+                            <%
+                                CommentImpl commentimp = new CommentImpl() ;
+                                List<Comment> comments = commentimp.listAll() ;
+                                for (int i=0;i<comments.size();i++){
+                                    if (comments.get(i).getUrl().equals(blogMarkDown.getLocalurl())){
+                            %>
+                            <div class="comment-parent">
+                                <img src="<%=comments.get(i).getImgurl()%>" alt="absolutely" />
+                                <div class="info">
+                                    <span class="username"><%=comments.get(i).getName()%></span>
+                                    <span class="time"><%=comments.get(i).getTime()%></span>
+                                </div>
+                                <div class="content">
+                                    <%=comments.get(i).getContent()%>
+                                </div>
+                            </div>
+                            <%
+                                    }
+                                }
+                            %>
+                        </li>
+                    </ul>
+                </div>
             </div>
             <div class="blog-main-right">
-                <div class="blog-search">
-                    <form class="layui-form" action="">
-                        <div class="layui-form-item">
-                            <div class="search-keywords  shadow">
-                                <input type="text" name="keywords" lay-verify="required" placeholder="输入关键词搜索" autocomplete="off" class="layui-input">
-                            </div>
-                            <div class="search-submit  shadow">
-                                <a class="search-btn" lay-submit="formSearch" lay-filter="formSearch"><i class="fa fa-search"></i></a>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+                <!--右边悬浮 平板或手机设备显示-->
+                <div class="category-toggle"><i class="fa fa-chevron-left"></i></div><!--这个div位置不能改，否则需要添加一个div来代替它或者修改样式表-->
                 <div class="article-category shadow">
                     <div class="article-category-title">分类导航</div>
                     <a href="javascript:layer.msg(&#39;切换到相应分类&#39;)">Python</a>
@@ -131,6 +155,7 @@
                     <div class="blog-module-title">作者推荐</div>
                     <ul class="fa-ul blog-module-ul">
                         <%
+                            List<BlogMarkDown> list = blogMarkDownDao.listAll();
                             for(int i=0;i<list.size();i++){
                         %>
                         <li><i class="fa-li fa fa-hand-o-right"></i><a href="<%=list.get(i).getLocalurl()%>"><%=list.get(i).getTitle()%></a></li>
@@ -139,8 +164,6 @@
                         %>
                     </ul>
                 </div>
-                <!--右边悬浮 平板或手机设备显示-->
-                <div class="category-toggle"><i class="fa fa-chevron-left"></i></div>
             </div>
             <div class="clear"></div>
         </div>
@@ -197,11 +220,35 @@
         }]
     });
 </script>
+<script type="text/javascript">
+    <%
+        String []data = blogMarkDown.getData().split("\r\n") ;
+    %>
+    $(function () {
+        var converter = new showdown.Converter(),
+            text = "" +
+                <%
+                    for(int i=0;i<data.length;i++){
+                %>
+                "<%=data[i].replace("\r\n","").replace("\"","\\\"").replace("\'","\\\'")%>" +
+                "\n" +
+                <%
+                    }
+                %>
+                "",
+            html = converter.makeHtml(text);
+        document.getElementById("result").innerHTML = html;
+    });
+</script>
 <!--遮罩-->
 <div class="blog-mask animated layui-hide"></div>
 <!-- layui.js -->
 <script src="../plug/layui/layui.js"></script>
-<!-- 全局脚本 -->
+<!-- 自定义全局脚本 -->
 <script src="../js/global.js"></script>
+<!-- 比较好用的代码着色插件 -->
+<script src="../js/prettify.js"></script>
+<!-- 本页脚本 -->
+<script src="../js/detail.js"></script>
 </body>
 </html>

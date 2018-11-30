@@ -1,12 +1,4 @@
-﻿/*
-
-@Name：不落阁整站模板源码 
-@Author：Absolutely 
-@Site：http://www.lyblogs.cn
-
-*/
-
-.timeline-box {
+﻿.timeline-box {
     background: #fff;
     padding: 8px;
     position: relative;
@@ -141,7 +133,7 @@
         margin-left: 16%; /*写给不支持calc()的浏览器*/
         margin-left: -moz-calc(18% - 13px);
         margin-left: -webkit-calc(18% - 13px);
-        margin-left: calc(18% -13px);
+        margin-left: calc(18% - 13px);
     }
 
         .timeline-main > h1 > i {

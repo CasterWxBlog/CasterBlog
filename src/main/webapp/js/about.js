@@ -1,12 +1,4 @@
-﻿/*
-
-@Name：不落阁整站模板源码 
-@Author：Absolutely 
-@Site：http://www.lyblogs.cn
-
-*/
-
-layui.use(['element', 'jquery', 'form', 'layedit'], function () {
+﻿layui.use(['element', 'jquery', 'form', 'layedit'], function () {
     var element = layui.element();
     var form = layui.form();
     var $ = layui.jquery;
