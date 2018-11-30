@@ -195,12 +195,12 @@
                 <div class="blog-module shadow">
                     <div class="blog-module-title">后台记录</div>
                     <dl class="footprint">
-                        <dt>2017年03月16日</dt>
+                        <dt>2018年10月16日</dt>
                         <dd>分页新增页容量控制</dd>
-                        <dt>2017年03月12日</dt>
-                        <dd>新增管家提醒功能</dd>
-                        <dt>2017年03月10日</dt>
-                        <dd>新增Win10快捷菜单</dd>
+                        <dt>2018年09月12日</dt>
+                        <dd>新增时光轴</dd>
+                        <dt>2018年09月10日</dt>
+                        <dd>新增博客列表效果</dd>
                     </dl>
                 </div>
                 <div class="blog-module shadow">
@@ -260,10 +260,23 @@
 <script>
     const ap = new APlayer({
         container: document.getElementById('aplayer'),
+        fixed: true,
+        listFolded: false,
+        listMaxHeight: 90,
+        lrcType: 3,
         audio: [{
             name: 'カサネテク',
             artist: '中关村二',
+            lrc: '../aplayer/darling.lrc',
+            theme: '#ebd0c2',
             url: '../aplayer/music.mp3',
+            cover:  'http://p2.music.126.net/AWXPd_GVXCzUocAMyatE5Q==/760862046442975.jpg?param=130y130'
+        },{
+            name: 'カサネテク',
+            artist: '中关村二',
+            lrc: '../aplayer/darling.lrc',
+            url: '../aplayer/music.mp3',
+            theme: '#46718b',
             cover:  'http://p2.music.126.net/AWXPd_GVXCzUocAMyatE5Q==/760862046442975.jpg?param=130y130'
         }]
     });

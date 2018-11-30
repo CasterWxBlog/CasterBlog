@@ -71,7 +71,7 @@
 <%
     BlogMarkDownDaoImpl blogMarkDownDao = new BlogMarkDownDaoImpl();
     List<BlogMarkDown> blogMarkDowns = blogMarkDownDao.listAll() ;
-    BlogMarkDown blogMarkDown = blogMarkDowns.get(4);
+    BlogMarkDown blogMarkDown = blogMarkDowns.get(5);
 %>
 <div class="blog-body">
     <div class="blog-container">

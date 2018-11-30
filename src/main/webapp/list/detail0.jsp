@@ -210,6 +210,7 @@
 </div>
 <script src="../aplayer/APlayer.min.js"></script>
 <script>
+
     const ap = new APlayer({
         container: document.getElementById('aplayer'),
         audio: [{

@@ -209,7 +209,7 @@
                                                 <div class="comment-child">
                                                     <img src="../images/Absolutely.jpg" alt="Absolutely" />
                                                     <div class="info">
-                                                        <span class="username">Absolutely</span><span>这是用户回复内容</span>
+                                                        <span class="username">AntzUhl</span><span>这是用户回复内容</span>
                                                     </div>
                                                     <p class="info"><span class="time">2018-03-18 18:26</span></p>
                                                 </div>
