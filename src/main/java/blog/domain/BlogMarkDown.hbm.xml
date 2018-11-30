@@ -8,9 +8,12 @@
 		<id name="id" type="java.lang.Integer" column="id">
 			<generator class="native"/>
 		</id>
+		<property name="title" column="title"/>
+		<property name="author" column="author"/>
 		<property name="localurl" column="localurl"/>
 		<property name="imgurl" column="imgurl"/>
 		<property name="time" column="time"/>
+		<property name="local" column="local"/>
 		<property name="review" column="review"/>
 		<property name="memage" column="memage"/>
 		<property name="code" column="code"/>

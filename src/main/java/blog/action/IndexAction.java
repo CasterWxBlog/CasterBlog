@@ -1,5 +1,7 @@
 package blog.action;
 
+import com.opensymphony.xwork2.Action;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -12,14 +14,9 @@ import java.io.IOException;
  * @company Henu
  * @create 2018-11-30-8:42
  */
-public class IndexAction extends HttpServlet {
+public class IndexAction implements Action {
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.sendRedirect("jsp/home.jsp");
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        doGet(req, resp);
+    public String execute() throws Exception {
+        return SUCCESS;
     }
 }

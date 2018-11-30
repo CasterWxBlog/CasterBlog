@@ -8,6 +8,8 @@ package blog.domain;
  */
 public class BlogMarkDown {
     private Integer id ;
+    private String title ;
+    private String author ;
     private String localurl  ;
     private String imgurl ;
     private String time ;
@@ -17,8 +19,9 @@ public class BlogMarkDown {
     private String code ;
     @Override
     public String toString() {
-        return "BlogMarkDown{" +
+        return "BlogMarkDownTest{" +
                 "id='" + id +'\''+
+                "title='" + title +'\''+
                 "localurl='" + localurl + '\'' +
                 ", imgurl='" + imgurl + '\'' +
                 ", time='" + time + '\'' +
@@ -27,6 +30,14 @@ public class BlogMarkDown {
                 ", memage=" + memage +
                 ", code=" + code +
                 '}';
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public Integer getId() {
@@ -91,5 +102,14 @@ public class BlogMarkDown {
 
     public String getCode() {
         return code;
+    }
+
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
     }
 }
