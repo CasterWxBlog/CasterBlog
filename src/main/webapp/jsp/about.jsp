@@ -11,16 +11,16 @@
     <meta http-equiv="Content-Type" content="text/html; Charset=gb2312">
     <meta http-equiv="Content-Language" content="zh-CN">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <title>不落阁 - 关于本站</title>
-    <link rel="shortcut icon" href="${pageContext.request.contextPath}/images/Logo_40.png" type="image/x-icon">
+    <title>CasterWx - 一群肥宅的博客网站</title>
+    <link rel="shortcut icon" href="../images/Logo_40.png" type="image/x-icon">
     <!--Layui-->
-    <link href="${pageContext.request.contextPath}/plug/font-awesome/css/layui.css" rel="stylesheet" />
+    <link href="../plug/layui/css/layui.css" rel="stylesheet" />
     <!--font-awesome-->
-    <link href="${pageContext.request.contextPath}/plug/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../plug/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
     <!--全局样式表-->
-    <link href="${pageContext.request.contextPath}/css/global.css" rel="stylesheet" />
+    <link href="../css/global.css" rel="stylesheet" />
     <!-- 本页样式表 -->
-    <link href="${pageContext.request.contextPath}/css/about.css" rel="stylesheet" />
+    <link href="../css/about.css" rel="stylesheet" />
 </head>
 <body>
 <!-- 导航 -->
@@ -31,26 +31,26 @@
             <i class="fa fa-qq"></i>
         </a>
         <a href="javascript:;" class="blog-user layui-hide">
-            <img src="${pageContext.request.contextPath}/images/Absolutely.jpg" alt="Absolutely" title="Absolutely" />
+            <img src="../images/Absolutely.jpg" alt="Absolutely" title="Absolutely" />
         </a>
-        <!-- 不落阁 -->
-        <a class="blog-logo" href="${pageContext.request.contextPath}/jsp/home.jsp">不落阁</a>
+        <!-- CasterWx -->
+        <a class="blog-logo" href="/home">CasterWx</a>
         <!-- 导航菜单 -->
         <ul class="layui-nav" lay-filter="nav">
-            <li class="layui-nav-item">
-                <a href="${pageContext.request.contextPath}/jsp/home.jsp"><i class="fa fa-home fa-fw"></i>&nbsp;网站首页</a>
-            </li>
-            <li class="layui-nav-item">
-                <a href="${pageContext.request.contextPath}/jsp/article.jsp"><i class="fa fa-file-text fa-fw"></i>&nbsp;文章专栏</a>
-            </li>
-            <li class="layui-nav-item">
-                <a href="${pageContext.request.contextPath}/jsp/resource.jsp"><i class="fa fa-tags fa-fw"></i>&nbsp;资源分享</a>
-            </li>
-            <li class="layui-nav-item">
-                <a href="${pageContext.request.contextPath}/jsp/timeline.jsp"><i class="fa fa-hourglass-half fa-fw"></i>&nbsp;点点滴滴</a>
-            </li>
             <li class="layui-nav-item layui-this">
-                <a href="${pageContext.request.contextPath}/jsp/about.jsp"><i class="fa fa-info fa-fw"></i>&nbsp;关于本站</a>
+                <a href="/home"><i class="fa fa-home fa-fw"></i>&nbsp;网站首页</a>
+            </li>
+            <li class="layui-nav-item">
+                <a href="/article"><i class="fa fa-file-text fa-fw"></i>&nbsp;文章专栏</a>
+            </li>
+            <li class="layui-nav-item">
+                <a href="/resource"><i class="fa fa-tags fa-fw"></i>&nbsp;资源分享</a>
+            </li>
+            <li class="layui-nav-item">
+                <a href="/timeline"><i class="fa fa-hourglass-half fa-fw"></i>&nbsp;点点滴滴</a>
+            </li>
+            <li class="layui-nav-item">
+                <a href="/about"><i class="fa fa-info fa-fw"></i>&nbsp;关于本站</a>
             </li>
         </ul>
         <!-- 手机和平板的导航开关 -->
@@ -63,7 +63,7 @@
 <div class="blog-body">
     <div class="blog-container">
         <blockquote class="layui-elem-quote sitemap layui-breadcrumb shadow">
-            <a href="${pageContext.request.contextPath}/jsp/home.jsp" title="网站首页">网站首页</a>
+            <a href="/home" title="网站首页">网站首页</a>
             <a><cite>关于本站</cite></a>
         </blockquote>
         <div class="blog-main">
@@ -78,29 +78,27 @@
                     <div class="layui-tab-item">
                         <div class="aboutinfo">
                             <div class="aboutinfo-figure">
-                                <img src="${pageContext.request.contextPath}/images/Logo_100.png" alt="不落阁" />
+                                <img src="../images/Logo_100.png" alt="CasterWx" />
                             </div>
-                            <p class="aboutinfo-nickname">不落阁</p>
-                            <p class="aboutinfo-introduce">一个.NET程序员的个人博客，记录博主学习和成长之路，分享.NET方面技术和源码</p>
-                            <p class="aboutinfo-location"><i class="fa fa-link"></i>&nbsp;&nbsp;<a target="_blank" href="http://github.com/CasterWx">www.github.com/CasterWx</a></p>
+                            <p class="aboutinfo-nickname">CasterWx</p>
+                            <p class="aboutinfo-introduce">一个肥宅程序员的个人博客.</p>
+                            <p class="aboutinfo-location"><i class="fa fa-link"></i>&nbsp;&nbsp;<a target="_blank" href="https://github.com/CasterWx">https://github.com/CasterWx</a></p>
                             <hr />
                             <div class="aboutinfo-contact">
-                                <a target="_blank" title="网站首页" href="${pageContext.request.contextPath}/jsp/home.jsp"><i class="fa fa-home fa-2x" style="font-size:2.5em;position:relative;top:3px"></i></a>
-                                <a target="_blank" title="文章专栏" href="${pageContext.request.contextPath}/jsp/article.jsp"><i class="fa fa-file-text fa-2x"></i></a>
-                                <a target="_blank" title="资源分享" href="${pageContext.request.contextPath}/jsp/resource.jsp"><i class="fa fa-tags fa-2x"></i></a>
-                                <a target="_blank" title="点点滴滴" href="${pageContext.request.contextPath}/jsp/timeline.jsp"><i class="fa fa-hourglass-half fa-2x"></i></a>
+                                <a target="_blank" title="网站首页" href="/home"><i class="fa fa-home fa-2x" style="font-size:2.5em;position:relative;top:3px"></i></a>
+                                <a target="_blank" title="文章专栏" href="/article"><i class="fa fa-file-text fa-2x"></i></a>
+                                <a target="_blank" title="资源分享" href="/resource"><i class="fa fa-tags fa-2x"></i></a>
+                                <a target="_blank" title="点点滴滴" href="/timeline"><i class="fa fa-hourglass-half fa-2x"></i></a>
                             </div>
 
                             <fieldset class="layui-elem-field layui-field-title">
                                 <legend>简介</legend>
                                 <div class="layui-field-box aboutinfo-abstract">
-                                    <p style="text-align:center;">不落阁是一个由ASP.NET MVC开发的个人博客网站，诞生于2016年11月7日，起劲为止经历了一次大改，暂且称为不落阁2.0。</p>
-                                    <h1>第一个版本</h1>
-                                    <p>诞生的版本，采用ASP.NET MVC + Entity Framework作为后台框架，前端几乎自己手写，用了Bootstrap的栅格系统来布局！起初并没有注意美工，只打算完成基本的功能，故视觉体验是比较差的。</p>
-                                    <h1>第二个版本</h1>
-                                    <p>由于感觉EF查询数据的时候较慢（后来发现是自己搞错了），于是自己写了个ORM，其实也算不上ORM，就是将ADO.NET进行封装，再封装，再利用反射将数据库表与实体类一一对应，有了基本的增删改查、事务、自动建表等功能，同时为了配合这个ORM，将项目改成三层，前端方面加入了Animate.css的动画效果，同时自己手写了几个动画，并制作了浅色于深色两种主题的样式，视觉体验稍有提高。</p>
+                                    <p style="text-align:center;">CasterWx是一个由Java Web开发的个人博客网站，诞生于2018年10月1日，起劲为止经历了一次大改，暂且称为CasterWx</p>
+                                    <h1>上一个版本</h1>
+                                    <p>为了记录每一天被室友喂的狗粮.</p>
                                     <h1>当前版本</h1>
-                                    <p>从公司的一个后台管理系统的前端发现了Layer弹窗插件，于是追根溯源，发现了Layui前端框架！Layui简洁的风格让我很是喜欢，于是决定再次将网站改版！此次改版从里到外几乎全部更新。后台增加了面向接口开发，使用了IOC框架，同时ORM回归到Entity Framework，前端则移除Bootstarp，引入Layui。视觉体验显著提高。</p>
+                                    <p>为了学校应付Java Web大作业.</p>
                                     <h1 style="text-align:center;">The End</h1>
                                 </div>
                             </fieldset>
@@ -109,11 +107,11 @@
                     <div class="layui-tab-item">
                         <div class="aboutinfo">
                             <div class="aboutinfo-figure">
-                                <img src="${pageContext.request.contextPath}/images/Absolutely.jpg" alt="Absolutely" />
+                                <img src="../images/Absolutely.jpg" alt="Absolutely" />
                             </div>
-                            <p class="aboutinfo-nickname">Absolutely</p>
-                            <p class="aboutinfo-introduce">一枚90后程序员，.NET开发工程师，主攻B/S架构，略懂Web前端</p>
-                            <p class="aboutinfo-location"><i class="fa fa-location-arrow"></i>&nbsp;四川 - 成都</p>
+                            <p class="aboutinfo-nickname">AntzUhl</p>
+                            <p class="aboutinfo-introduce">一个90后程序员. 操作系统/JavaWeb/Python.</p>
+                            <p class="aboutinfo-location"><i class="fa fa-location-arrow"></i>&nbsp;四川 - 南充</p>
                             <hr />
                             <div class="aboutinfo-contact">
                                 <a target="_blank" title="QQ交流" href="javascript:layer.msg('启动QQ会话窗口')"><i class="fa fa-qq fa-2x"></i></a>
@@ -124,7 +122,7 @@
                             <fieldset class="layui-elem-field layui-field-title">
                                 <legend>简介</legend>
                                 <div class="layui-field-box aboutinfo-abstract abstract-bloger">
-                                    <p style="text-align:center;">Absolutely，不落阁创始人，诞生于1996年2月14日，目前是一个码农，从事.NET开发。</p>
+                                    <p style="text-align:center;">AntzUhl，目前是一个学生.</p>
                                     <h1>个人信息</h1>
                                     <p>暂无</p>
                                     <h1>个人介绍</h1>
@@ -137,10 +135,10 @@
                     <div class="layui-tab-item">
                         <div class="aboutinfo">
                             <div class="aboutinfo-figure">
-                                <img src="${pageContext.request.contextPath}/images/handshake.png" alt="友情链接" />
+                                <img src="../images/handshake.png" alt="友情链接" />
                             </div>
                             <p class="aboutinfo-nickname">友情链接</p>
-                            <p class="aboutinfo-introduce">Name：不落阁&nbsp;&nbsp;&nbsp;&nbsp;Site：www.lyblogs.cn</p>
+                            <p class="aboutinfo-introduce">Name：CasterWx&nbsp;&nbsp;&nbsp;&nbsp;Site：www.github.com/CasterWx</p>
                             <p class="aboutinfo-location">
                                 <i class="fa fa-close"></i>经常宕机&nbsp;
                                 <i class="fa fa-close"></i>不合法规&nbsp;
@@ -160,15 +158,8 @@
                                         <li>
                                             <a target="_blank" href="http://www.layui.com/" title="Layui" class="friendlink-item">
                                                 <p class="friendlink-item-pic"><img src="http://www.layui.com/favicon.ico" alt="Layui" /></p>
-                                                <p class="friendlink-item-title">Layui</p>
-                                                <p class="friendlink-item-domain">layui.com</p>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a target="_blank" href="http://www.pagemark.cn/" title="页签" class="friendlink-item">
-                                                <p class="friendlink-item-pic"><img src="http://pm.lyblogs.cn/Images/logo-png.png" alt="页签" /></p>
-                                                <p class="friendlink-item-title">页签</p>
-                                                <p class="friendlink-item-domain">pagemark.cn</p>
+                                                <p class="friendlink-item-title">Hhw</p>
+                                                <p class="friendlink-item-domain">hhw.com</p>
                                             </a>
                                         </li>
                                     </ul>
@@ -179,7 +170,7 @@
                     <div class="layui-tab-item">
                         <div class="aboutinfo">
                             <div class="aboutinfo-figure">
-                                <img src="${pageContext.request.contextPath}/images/messagewall.png" alt="留言墙" />
+                                <img src="../images/messagewall.png" alt="留言墙" />
                             </div>
                             <p class="aboutinfo-nickname">留言墙</p>
                             <p class="aboutinfo-introduce">本页面可留言、吐槽、提问。欢迎灌水，杜绝广告！</p>
@@ -205,9 +196,9 @@
                                         <ul class="blog-comment">
                                             <li>
                                                 <div class="comment-parent">
-                                                    <img src="${pageContext.request.contextPath}/images/Logo_40.png" alt="不落阁" />
+                                                    <img src="../images/Logo_40.png" alt="CasterWx" />
                                                     <div class="info">
-                                                        <span class="username">不落阁</span>
+                                                        <span class="username">CasterWx</span>
                                                     </div>
                                                     <div class="content">
                                                         我为大家做了模拟留言与回复！试试吧！
@@ -216,18 +207,18 @@
                                                 </div>
                                                 <hr />
                                                 <div class="comment-child">
-                                                    <img src="${pageContext.request.contextPath}/images/Absolutely.jpg" alt="Absolutely" />
+                                                    <img src="../images/Absolutely.jpg" alt="Absolutely" />
                                                     <div class="info">
                                                         <span class="username">Absolutely</span><span>这是用户回复内容</span>
                                                     </div>
-                                                    <p class="info"><span class="time">2017-03-18 18:26</span></p>
+                                                    <p class="info"><span class="time">2018-03-18 18:26</span></p>
                                                 </div>
                                                 <div class="comment-child">
-                                                    <img src="${pageContext.request.contextPath}/images/Absolutely.jpg" alt="Absolutely" />
+                                                    <img src="../images/Absolutely.jpg" alt="Absolutely" />
                                                     <div class="info">
-                                                        <span class="username">Absolutely</span><span>这是第二个用户回复内容</span>
+                                                        <span class="username">AntzUhl</span><span>这是第二个用户回复内容</span>
                                                     </div>
-                                                    <p class="info"><span class="time">2017-03-18 18:26</span></p>
+                                                    <p class="info"><span class="time">2018-03-18 18:26</span></p>
                                                 </div>
                                                 <!-- 回复表单默认隐藏 -->
                                                 <div class="replycontainer layui-hide">
@@ -254,25 +245,25 @@
 </div>
 <!-- 底部 -->
 <footer class="blog-footer">
-    <p><span>Copyright</span><span>&copy;</span><span>2017</span><a href="http://www.lyblogs.cn">不落阁</a><span>Design By LY</span></p>
-    <p><a href="http://www.miibeian.gov.cn/" target="_blank">蜀ICP备16029915号-1</a></p>
+    <p><span>Copyright</span><span>&copy;</span><span>2018</span><a href="https://github.com/CasterWx">CasterWx</a><span> By AntzUhl</span></p>
+    <p><a href="http://www.github.com/CasterWx" target="_blank">@CasterWx</a></p>
 </footer>
 <!--侧边导航-->
 <ul class="layui-nav layui-nav-tree layui-nav-side blog-nav-left layui-hide" lay-filter="nav">
-    <li class="layui-nav-item">
-        <a href="${pageContext.request.contextPath}/jsp/home.jsp"><i class="fa fa-home fa-fw"></i>&nbsp;网站首页</a>
-    </li>
-    <li class="layui-nav-item">
-        <a href="${pageContext.request.contextPath}/jsp/article.jsp"><i class="fa fa-file-text fa-fw"></i>&nbsp;文章专栏</a>
-    </li>
-    <li class="layui-nav-item">
-        <a href="${pageContext.request.contextPath}/jsp/resource.jsp"><i class="fa fa-tags fa-fw"></i>&nbsp;资源分享</a>
-    </li>
-    <li class="layui-nav-item">
-        <a href="${pageContext.request.contextPath}/jsp/timeline.jsp"><i class="fa fa-road fa-fw"></i>&nbsp;点点滴滴</a>
-    </li>
     <li class="layui-nav-item layui-this">
-        <a href="${pageContext.request.contextPath}/jsp/about.jsp"><i class="fa fa-info fa-fw"></i>&nbsp;关于本站</a>
+        <a href="/home"><i class="fa fa-home fa-fw"></i>&nbsp;网站首页</a>
+    </li>
+    <li class="layui-nav-item">
+        <a href="/article"><i class="fa fa-file-text fa-fw"></i>&nbsp;文章专栏</a>
+    </li>
+    <li class="layui-nav-item">
+        <a href="/resource"><i class="fa fa-tags fa-fw"></i>&nbsp;资源分享</a>
+    </li>
+    <li class="layui-nav-item">
+        <a href="/timeline"><i class="fa fa-road fa-fw"></i>&nbsp;点点滴滴</a>
+    </li>
+    <li class="layui-nav-item">
+        <a href="/about"><i class="fa fa-info fa-fw"></i>&nbsp;关于本站</a>
     </li>
 </ul>
 <!--分享窗体-->
@@ -291,10 +282,10 @@
 <!--遮罩-->
 <div class="blog-mask animated layui-hide"></div>
 <!-- layui.js -->
-<script src="${pageContext.request.contextPath}/plug/layui/layui.js"></script>
+<script src="../plug/layui/layui.js"></script>
 <!-- 全局脚本 -->
-<script src="${pageContext.request.contextPath}/js/global.js"></script>
+<script src="../js/global.js"></script>
 <!-- 本页脚本 -->
-<script src="${pageContext.request.contextPath}/js/about.js"></script>
+<script src="../js/about.js"></script>
 </body>
 </html>

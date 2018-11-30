@@ -1,4 +1,9 @@
-<%--
+<%@ page import="blog.dao.impl.BlogMarkDownDaoImpl" %>
+<%@ page import="blog.domain.BlogMarkDown" %>
+<%@ page import="java.util.List" %>
+<%@ page import="blog.dao.impl.LogDataImpl" %>
+<%@ page import="blog.domain.LogData" %>
+<%@ page import="java.util.ArrayList" %><%--
   Created by IntelliJ IDEA.
   User: 13252
   Date: 2018/11/30
@@ -34,7 +39,7 @@
             <img src="../images/Absolutely.jpg" alt="Absolutely" title="Absolutely" />
         </a>
         <!-- CasterWx -->
-        <a class="blog-logo" href="home.html">CasterWx</a>
+        <a class="blog-logo" href="/home">CasterWx</a>
         <!-- 导航菜单 -->
         <ul class="layui-nav" lay-filter="nav">
             <li class="layui-nav-item layui-this">
@@ -83,75 +88,42 @@
                     <span style="color: #009688">偷偷告诉大家，本博客的后台管理也正在制作，为大家准备了游客专用账号！</span>
                     <span style="color: red">网站新增留言回复啦！使用QQ登陆即可回复，人人都可以回复！</span>
                     <span style="color: red">如果你觉得网站做得还不错，来Github点个Star吧！<a href="https://github.com/CasterWx" target="_blank" style="color:#01AAED">点我前往</a></span>
-                    <span style="color: #009688">CasterWx &nbsp;—— &nbsp;一个肥宅程序员的个人博客，新版网站采用Layui为前端框架，目前正在建设中！</span>
+                    <span style="color: #009688">CasterWx &nbsp;—— &nbsp;一个肥宅程序员的个人博客，目前正在建设中！</span>
                 </div>
             </div>
             <!--左边文章列表-->
+
             <div class="blog-main-left">
+            <%
+                BlogMarkDownDaoImpl blogMarkDownDao = new BlogMarkDownDaoImpl() ;
+                List<BlogMarkDown> list = blogMarkDownDao.listAll();
+                for(int i=0;i<list.size();i++){
+            %>
                 <div class="article shadow">
                     <div class="article-left">
-                        <img src="../images/cover/201703181909057125.jpg" alt="基于laypage的layui扩展模块（pagesize.js）！" />
+                        <img src="<%=list.get(i).getImgurl()%>" alt="点击查看" />
                     </div>
                     <div class="article-right">
                         <div class="article-title">
-                            <a href="/detail">基于MFC开发的指纹识别系统.</a>
+                            <a href="<%=list.get(i).getLocalurl()%>"><%=list.get(i).getTitle()%></a>
                         </div>
                         <div class="article-abstract">
-                            在第12步特征入库中，会对当前指纹的mdl数据与databases中所有的mdl进行对比,然后返回识别结果.
+                            <%=list.get(i).getCode()%>
                         </div>
                     </div>
                     <div class="clear"></div>
                     <%-- time --%>
                     <div class="article-footer">
-                        <span><i class="fa fa-clock-o"></i>&nbsp;&nbsp;2017-03-18</span>
-                        <span class="article-author"><i class="fa fa-user"></i>&nbsp;&nbsp;Absolutely</span>
-                        <span><i class="fa fa-tag"></i>&nbsp;&nbsp;<a href="#">Mfc</a></span>
-                        <span class="article-viewinfo"><i class="fa fa-eye"></i>&nbsp;0</span>   <%--review--%>
-                        <span class="article-viewinfo"><i class="fa fa-commenting"></i>&nbsp;4</span> <%--留言--%>
+                        <span><i class="fa fa-clock-o"></i>&nbsp;&nbsp;<%=list.get(i).getTime()%></span>
+                        <span class="article-author"><i class="fa fa-user"></i>&nbsp;&nbsp;<%=list.get(i).getAuthor()%></span>
+                        <span><i class="fa fa-tag"></i>&nbsp;&nbsp;<a href="#"><%=list.get(i).getLocal()%></a></span>
+                        <span class="article-viewinfo"><i class="fa fa-eye"></i>&nbsp;<%=list.get(i).getReview()%></span>   <%--review--%>
+                        <span class="article-viewinfo"><i class="fa fa-commenting"></i>&nbsp;<%=list.get(i).getMemage()%></span> <%--留言--%>
                     </div>
                 </div>
-                <div class="article shadow">
-                    <div class="article-left">
-                        <img src="../images/cover/201703181909057125.jpg" alt="基于laypage的layui扩展模块（pagesize.js）！" />
-                    </div>
-                    <div class="article-right">
-                        <div class="article-title">
-                            <a href="detail.html">基于laypage的layui扩展模块（pagesize.js）！</a>
-                        </div>
-                        <div class="article-abstract">
-                            该模块主要是针对当前版本laypage没有页容量控制功能而制作，使用该模块后即可实现每页显示多少条数据的控制！本人原创，但是可能有可能只对本人的分页写法有用！
-                        </div>
-                    </div>
-                    <div class="clear"></div>
-                    <div class="article-footer">
-                        <span><i class="fa fa-clock-o"></i>&nbsp;&nbsp;2017-03-18</span>
-                        <span class="article-author"><i class="fa fa-user"></i>&nbsp;&nbsp;Absolutely</span>
-                        <span><i class="fa fa-tag"></i>&nbsp;&nbsp;<a href="#">Web前端</a></span>
-                        <span class="article-viewinfo"><i class="fa fa-eye"></i>&nbsp;0</span>
-                        <span class="article-viewinfo"><i class="fa fa-commenting"></i>&nbsp;4</span>
-                    </div>
-                </div>
-                <div class="article shadow">
-                    <div class="article-left">
-                        <img src="../images/cover/201703181909057125.jpg" alt="基于laypage的layui扩展模块（pagesize.js）！" />
-                    </div>
-                    <div class="article-right">
-                        <div class="article-title">
-                            <a href="detail.html">基于laypage的layui扩展模块（pagesize.js）！</a>
-                        </div>
-                        <div class="article-abstract">
-                            该模块主要是针对当前版本laypage没有页容量控制功能而制作，使用该模块后即可实现每页显示多少条数据的控制！本人原创，但是可能有可能只对本人的分页写法有用！
-                        </div>
-                    </div>
-                    <div class="clear"></div>
-                    <div class="article-footer">
-                        <span><i class="fa fa-clock-o"></i>&nbsp;&nbsp;2017-03-18</span>
-                        <span class="article-author"><i class="fa fa-user"></i>&nbsp;&nbsp;Absolutely</span>
-                        <span><i class="fa fa-tag"></i>&nbsp;&nbsp;<a href="#">Web前端</a></span>
-                        <span class="article-viewinfo"><i class="fa fa-eye"></i>&nbsp;0</span>
-                        <span class="article-viewinfo"><i class="fa fa-commenting"></i>&nbsp;4</span>
-                    </div>
-                </div>
+            <%
+                }
+            %>
             </div>
             <!--右边小栏目-->
             <div class="blog-main-right">
@@ -165,19 +137,22 @@
                     <hr />
                     <div class="blogerinfo-contact">
                         <a target="_blank" title="QQ交流" href="javascript:layer.msg('启动QQ会话窗口')"><i class="fa fa-qq fa-2x"></i></a>
-                        <a target="_blank" title="给我写信" href="javascript:layer.msg('启动邮我窗口')"><i class="fa fa-envelope fa-2x"></i></a>
+                        <a target="_blank" title="给我写信" href="javascript:layer.msg('antzuhl1998@gmail.com')"><i class="fa fa-envelope fa-2x"></i></a>
                         <a target="_blank" title="新浪微博" href="javascript:layer.msg('转到你的微博主页')"><i class="fa fa-weibo fa-2x"></i></a>
-                        <a target="_blank" title="码云" href="javascript:layer.msg('转到你的github主页')"><i class="fa fa-git fa-2x"></i></a>
+                        <a target="_blank" title="Github" href="javascript:layer.msg('https://github.com/CasterWx')"><i class="fa fa-git fa-2x"></i></a>
                     </div>
                 </div>
                 <div></div><!--占位-->
                 <div class="blog-module shadow">
                     <div class="blog-module-title">热文排行</div>
                     <ul class="fa-ul blog-module-ul">
-                        <li><i class="fa-li fa fa-hand-o-right"></i><a href="detail.html">Maven环境变量配置</a></li>
-                        <li><i class="fa-li fa fa-hand-o-right"></i><a href="detail.html">解决猫眼网反爬虫策略的爬虫</a></li>
-                        <li><i class="fa-li fa fa-hand-o-right"></i><a href="detail.html">没有对象也要谈恋爱之女朋友的情绪监控</a></li>
-                        <li><i class="fa-li fa fa-hand-o-right"></i><a href="detail.html">利用Android-FingerprintManager类实现指纹识别</a></li>
+                        <%
+                            for(int i=0;i<list.size();i++){
+                        %>
+                        <li><i class="fa-li fa fa-hand-o-right"></i><a href="<%=list.get(i).getLocalurl()%>"><%=list.get(i).getTitle()%></a></li>
+                        <%
+                            }
+                        %>
                     </ul>
                 </div>
                 <div class="blog-module shadow">
@@ -192,14 +167,16 @@
                 <div class="blog-module shadow">
                     <div class="blog-module-title">一路走来</div>
                     <dl class="footprint">
-                        <dt>2017年03月12日</dt>
-                        <dd>新增留言回复功能！人人都可参与回复！</dd>
-                        <dt>2017年03月10日</dt>
-                        <dd>不落阁2.0基本功能完成，正式上线！</dd>
-                        <dt>2017年03月09日</dt>
-                        <dd>新增文章搜索功能！</dd>
-                        <dt>2017年02月25日</dt>
-                        <dd>QQ互联接入网站，可QQ登陆发表评论与留言！</dd>
+                        <%
+                            LogDataImpl logData1 = new LogDataImpl() ;
+                            List<LogData> logData = logData1.listAll();
+                            for(int i=0;i<logData.size();i++){
+                        %>
+                        <dt><%=logData.get(i).getTime()%></dt>
+                        <dd><%=logData.get(i).getTitle()%></dd>
+                        <%
+                            }
+                        %>
                     </dl>
                 </div>
                 <div class="blog-module shadow">
@@ -214,10 +191,12 @@
                     </dl>
                 </div>
                 <div class="blog-module shadow">
-                    <div class="blog-module-title">友情链接</div>
+                    <div class="blog-module-title">友链</div>
                     <ul class="blogroll">
-                        <li><a target="_blank" href="http://www.layui.com/" title="Layui">Layui</a></li>
-                        <li><a target="_blank" href="http://www.pagemark.cn/" title="页签">页签</a></li>
+                        <li><a target="_blank" href="https://github.com/CasterWx" title="CasterWx">CasterWx</a></li>
+                        <li><a target="_blank" href="https://github.com/CasterWxBlog" title="CasterWxBlog">CasterWxBlog</a></li>
+                        <li><a target="_blank" href="https://github.com/hhw7080" title="hhw7080">hhw7080</a></li>
+                        <li><a target="_blank" href="https://github.com/hibearflag" title="hibearflag">hibearflag</a></li>
                     </ul>
                 </div>
             </div>
@@ -227,25 +206,25 @@
 </div>
 <!-- 底部 -->
 <footer class="blog-footer">
-    <p><span>Copyright</span><span>&copy;</span><span>2017</span><a href="http://www.lyblogs.cn">不落阁</a><span>Design By LY</span></p>
+    <p><span>Copyright</span><span>&copy;</span><span>2018</span><a href="https://github.com/CasterWx">CasterWx</a><span> By AntzUhl</span></p>
     <p><a href="http://www.github.com/CasterWx" target="_blank">@CasterWx</a></p>
 </footer>
 <!--侧边导航-->
 <ul class="layui-nav layui-nav-tree layui-nav-side blog-nav-left layui-hide" lay-filter="nav">
     <li class="layui-nav-item layui-this">
-        <a href="home.html"><i class="fa fa-home fa-fw"></i>&nbsp;网站首页</a>
+        <a href="/home"><i class="fa fa-home fa-fw"></i>&nbsp;网站首页</a>
     </li>
     <li class="layui-nav-item">
-        <a href="article.html"><i class="fa fa-file-text fa-fw"></i>&nbsp;文章专栏</a>
+        <a href="/article"><i class="fa fa-file-text fa-fw"></i>&nbsp;文章专栏</a>
     </li>
     <li class="layui-nav-item">
-        <a href="resource.html"><i class="fa fa-tags fa-fw"></i>&nbsp;资源分享</a>
+        <a href="/resource"><i class="fa fa-tags fa-fw"></i>&nbsp;资源分享</a>
     </li>
     <li class="layui-nav-item">
-        <a href="timeline.html"><i class="fa fa-road fa-fw"></i>&nbsp;点点滴滴</a>
+        <a href="/timeline"><i class="fa fa-road fa-fw"></i>&nbsp;点点滴滴</a>
     </li>
     <li class="layui-nav-item">
-        <a href="about.html"><i class="fa fa-info fa-fw"></i>&nbsp;关于本站</a>
+        <a href="/about"><i class="fa fa-info fa-fw"></i>&nbsp;关于本站</a>
     </li>
 </ul>
 <!--分享窗体-->
@@ -261,6 +240,21 @@
         </div>
     </div>
 </div>
+<link rel="stylesheet" href="../aplayer/APlayer.min.css">
+<div id="aplayer" style="align:center;width:500px;position:fixed; bottom:0; z-index:999;  overflow:visible;">
+</div>
+<script src="../aplayer/APlayer.min.js"></script>
+<script>
+    const ap = new APlayer({
+        container: document.getElementById('aplayer'),
+        audio: [{
+            name: 'カサネテク',
+            artist: '中关村二',
+            url: '../aplayer/music.mp3',
+            cover:  'http://p2.music.126.net/AWXPd_GVXCzUocAMyatE5Q==/760862046442975.jpg?param=130y130'
+        }]
+    });
+</script>
 <!--遮罩-->
 <div class="blog-mask animated layui-hide"></div>
 <!-- layui.js -->
