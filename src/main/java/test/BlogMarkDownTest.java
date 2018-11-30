@@ -42,4 +42,21 @@ public class BlogMarkDownTest {
         blogMarkDown.setCode("一款为单身狗定制的软件.");
         blogMarkDownDao.save(blogMarkDown);
     }
+    @Test
+    public void blogSaveTest3(){
+        BlogMarkDownDaoImpl blogMarkDownDao = new BlogMarkDownDaoImpl() ;
+        blog.domain.BlogMarkDown blogMarkDown = new blog.domain.BlogMarkDown() ;
+        blogMarkDown.setId(4);
+        blogMarkDown.setTitle("什么是生命？什么是人工智能？");
+        blogMarkDown.setLocalurl("/list/detail3.jsp");
+        blogMarkDown.setAuthor("AntzUhl");
+        blogMarkDown.setImgurl("../images/cover/a31fd1ce73f56f7ab14e2882c016772e.png");
+        blogMarkDown.setLocal("人工智能,生命");
+        blogMarkDown.setTime("2018-11-31");
+        blogMarkDown.setReview(301);
+        blogMarkDown.setMemage(24);
+        blogMarkDown.setCode("摘要: 但我们今天不站队，而是从另外一个“诡异”视角，去审视一下什么是生命，什么是人工智能 首先，“人工智能”这四个字本身就是一个难以解决的问题：“人工”智能“人工”智能，没有我们“人”的工作，就没有智能。因此，人工智能是我们人类的孩子。是好孩子还是坏孩子呢？如果是坏孩子，我们能不能干脆不生它呢？如果不得不");
+
+        blogMarkDownDao.save(blogMarkDown);
+    }
 }

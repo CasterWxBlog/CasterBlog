@@ -17,5 +17,6 @@
 		<mapping resource="blog/domain/User.hbm.xml"/>
 		<mapping resource="blog/domain/LogData.hbm.xml"/>
 		<mapping resource="blog/domain/BlogMarkDown.hbm.xml"/>
+		<mapping resource="blog/domain/Comment.hbm.xml"/>
 	</session-factory>
 </hibernate-configuration>

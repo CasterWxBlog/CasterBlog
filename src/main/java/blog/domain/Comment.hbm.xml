@@ -4,18 +4,14 @@
 	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping package="blog.domain">
-	<class name="BlogMarkDown" table="t_blog">
+	<class name="Comment" table="t_comment">
 		<id name="id" type="java.lang.Integer" column="id">
 			<generator class="native"/>
 		</id>
-		<property name="title" column="title"/>
-		<property name="author" column="author"/>
-		<property name="localurl" column="localurl"/>
+		<property name="url" column="url"/>
 		<property name="imgurl" column="imgurl"/>
 		<property name="time" column="time"/>
-		<property name="local" column="local"/>
-		<property name="review" column="review"/>
-		<property name="memage" column="memage"/>
-		<property name="code" column="code"/>
+		<property name="name" column="name"/>
+		<property name="content" column="content"/>
 	</class>
 </hibernate-mapping>

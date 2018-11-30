@@ -17,6 +17,7 @@ public class BlogMarkDown {
     private Integer review ;
     private Integer memage;
     private String code ;
+    private String data ;
     @Override
     public String toString() {
         return "BlogMarkDownTest{" +
@@ -29,7 +30,16 @@ public class BlogMarkDown {
                 ", review=" + review +
                 ", memage=" + memage +
                 ", code=" + code +
+                ", data=" + data +
                 '}';
+    }
+
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
     }
 
     public String getTitle() {

@@ -17,5 +17,6 @@
 		<property name="review" column="review"/>
 		<property name="memage" column="memage"/>
 		<property name="code" column="code"/>
+		<property name="data" column="data"/>
 	</class>
 </hibernate-mapping>

@@ -14,12 +14,8 @@ import java.util.List;
  * @create 2018-11-30-13:31
  */
 public class BlogListAction   implements Action {
-    public List<BlogMarkDown> list = new ArrayList<>() ;
-
     @Override
     public String execute() throws Exception {
-        BlogMarkDownDaoImpl blogMarkDownDao = new BlogMarkDownDaoImpl() ;
-        list = blogMarkDownDao.listAll();
 
         return SUCCESS ;
     }

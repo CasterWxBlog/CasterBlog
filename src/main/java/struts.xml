@@ -6,7 +6,7 @@
 <struts>
 	
   <package name="BootBlog" extends="struts-default">
-	  <action name="home" class="blog.action.BlogListAction">
+	  <action name="home" class="blog.action.IndexAction">
 		  <result name="success">/jsp/home.jsp</result>
 	  </action>
 	  <action name="about" class="blog.action.IndexAction">
@@ -15,7 +15,7 @@
 	  <action name="article" class="blog.action.IndexAction">
 		  <result name="success">/jsp/article.jsp</result>
 	  </action>
-	  <action name="detail" class="blog.action.IndexAction">
+	  <action name="/list/detail_*" class="blog.action.BlogListAction">
 		  <result name="success">/jsp/detail.jsp</result>
 	  </action>
 	  <action name="resource" class="blog.action.IndexAction">
