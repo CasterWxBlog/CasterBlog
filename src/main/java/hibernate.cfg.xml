@@ -1,0 +1,20 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<!--五大关联要素-->
+		<property name="show_sql">true</property>
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql:///casterwx</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">root</property>
+
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		<!--一个关联映射文件-->
+		<mapping resource="blog/domain/User.hbm.xml"/>
+		<mapping resource="blog/domain/BlogMarkDown.hbm.xml"/>
+	</session-factory>
+</hibernate-configuration>
