@@ -4,6 +4,9 @@ import blog.domain.LogData;
 import org.junit.jupiter.api.Test;
 import sun.rmi.runtime.Log;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * @author CasterWx  AntzUhl
  * @site https://github.com/CasterWx
@@ -29,5 +32,9 @@ public class LogDataTest {
         LogDataImpl logData1 = new LogDataImpl() ;
         logData1.save(logData);
     }
-
+    @Test
+    public void D(){
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        System.out.println(df.format(new Date()));
+    }
 }

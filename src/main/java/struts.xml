@@ -24,6 +24,9 @@
 	  <action name="timeline" class="blog.action.IndexAction">
 		  <result name="success">/jsp/timeline.jsp</result>
 	  </action>
+	  <action name="addcontent" class="blog.action.IndexAction">
+		  <result name="addContent">/jsp/addContent.jsp</result>
+	  </action>
   </package>
 
 </struts>
