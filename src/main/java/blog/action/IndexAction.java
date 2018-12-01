@@ -17,6 +17,7 @@ import java.io.IOException;
 public class IndexAction implements Action {
     @Override
     public String execute() throws Exception {
+        System.out.println("do action");
         return SUCCESS;
     }
 }

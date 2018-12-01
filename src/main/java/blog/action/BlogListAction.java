@@ -16,7 +16,7 @@ import java.util.List;
 public class BlogListAction   implements Action {
     @Override
     public String execute() throws Exception {
-
+        System.out.println("list adaowdmoawndiowan");
         return SUCCESS ;
     }
 }
