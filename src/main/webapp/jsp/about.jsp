@@ -22,7 +22,7 @@
     <!-- 本页样式表 -->
     <link href="../css/about.css" rel="stylesheet" />
 </head>
-<body>
+<body style="color: #000;background:url(../images/cover/header-mai.jpg) fixed; background-size: cover;background-repeat: repeat;font-size: 15px;min-height: 101%;">
 <!-- 导航 -->
 <nav class="blog-nav layui-header">
     <div class="blog-container">

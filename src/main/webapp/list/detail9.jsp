@@ -32,7 +32,8 @@
     <script src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
     <script src="../js/showdown.js"></script>
 </head>
-<body>
+<body style="color: #000;background:url(../images/cover/header-mai.jpg) fixed; background-size: cover;background-repeat: repeat;font-size: 15px;min-height: 101%;">
+
 <!-- 导航 -->
 <nav class="blog-nav layui-header">
     <div class="blog-container">
