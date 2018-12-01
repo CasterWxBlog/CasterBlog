@@ -2,7 +2,9 @@
 <%@ page import="blog.domain.BlogMarkDown" %>
 <%@ page import="java.util.List" %>
 <%@ page import="blog.dao.impl.CommentImpl" %>
-<%@ page import="blog.domain.Comment" %><%--
+<%@ page import="blog.domain.Comment" %>
+<%@ page import="blog.dao.impl.MusicImpl" %>
+<%@ page import="blog.domain.Music" %><%--
   Created by IntelliJ IDEA.
   User: 13252
   Date: 2018/11/30
@@ -69,9 +71,12 @@
 </nav>
 <!-- 主体（一般只改变这里的内容） -->
 <%
+    String uri=request.getRequestURI();
+    uri=uri.substring(uri.lastIndexOf("/")+1);
+    Integer num = new Integer(uri.replace("detail","").replace(".jsp",""));
+    System.out.println(uri);
     BlogMarkDownDaoImpl blogMarkDownDao = new BlogMarkDownDaoImpl();
-    List<BlogMarkDown> blogMarkDowns = blogMarkDownDao.listAll() ;
-    BlogMarkDown blogMarkDown = blogMarkDowns.get(2);
+    BlogMarkDown blogMarkDown = blogMarkDownDao.get(num);
 %>
 <div class="blog-body">
     <div class="blog-container">
@@ -210,14 +215,31 @@
 </div>
 <script src="../aplayer/APlayer.min.js"></script>
 <script>
+    audiodata = [
+        <%
+              MusicImpl music = new MusicImpl() ;
+              List<Music> musicList = music.listAll() ;
+              for(int i=0;i<musicList.size();i++){
+          %>
+        {
+            name: '<%=musicList.get(i).getName()%>',
+            artist: '<%=musicList.get(i).getArtist()%>',
+            lrc: '<%=musicList.get(i).getLrc()%>',
+            theme: '<%=musicList.get(i).getTheme()%>',
+            url: '<%=musicList.get(i).getUrl()%>',
+            cover: '<%=musicList.get(i).getCover()%>'
+        },
+        <%
+            }
+        %>
+    ]
     const ap = new APlayer({
         container: document.getElementById('aplayer'),
-        audio: [{
-            name: 'カサネテク',
-            artist: '中关村二',
-            url: '../aplayer/music.mp3',
-            cover:  'http://p2.music.126.net/AWXPd_GVXCzUocAMyatE5Q==/760862046442975.jpg?param=130y130'
-        }]
+        fixed: true,
+        listFolded: false,
+        listMaxHeight: 90,
+        lrcType: 3,
+        audio: audiodata
     });
 </script>
 <script type="text/javascript">
@@ -230,7 +252,7 @@
                 <%
                     for(int i=0;i<data.length;i++){
                 %>
-                "<%=data[i].replace("\r\n","").replace("\"","\\\"").replace("\'","\\\'")%>" +
+                "<%=data[i].replace("\r\n","").replace("\n","").replace("\"","\\\"").replace("\'","\\\'")%>" +
                 "\n" +
                 <%
                     }

@@ -107,7 +107,7 @@
                     <div class="layui-tab-item">
                         <div class="aboutinfo">
                             <div class="aboutinfo-figure">
-                                <img src="../images/Absolutely.jpg" alt="Absolutely" />
+                                <img src="../images/Logo_100.png" alt="Absolutely" />
                             </div>
                             <p class="aboutinfo-nickname">AntzUhl</p>
                             <p class="aboutinfo-introduce">一个90后程序员. 操作系统/JavaWeb/Python.</p>
@@ -156,10 +156,10 @@
                                 <div class="layui-field-box">
                                     <ul class="friendlink">
                                         <li>
-                                            <a target="_blank" href="http://www.layui.com/" title="Layui" class="friendlink-item">
-                                                <p class="friendlink-item-pic"><img src="http://www.layui.com/favicon.ico" alt="Layui" /></p>
-                                                <p class="friendlink-item-title">Hhw</p>
-                                                <p class="friendlink-item-domain">hhw.com</p>
+                                            <a target="_blank" href="https://github.com/hhw7080" title="Tory" class="friendlink-item">
+                                                <p class="friendlink-item-pic"><img src="https://avatars0.githubusercontent.com/u/44398306?s=460&v=4" alt="hhw" /></p>
+                                                <p class="friendlink-item-title">Tory</p>
+                                                <p class="friendlink-item-domain">https://github.com/hhw7080</p>
                                             </a>
                                         </li>
                                     </ul>

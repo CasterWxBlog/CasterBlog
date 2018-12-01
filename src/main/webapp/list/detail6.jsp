@@ -71,8 +71,12 @@
 </nav>
 <!-- 主体（一般只改变这里的内容） -->
 <%
+    String uri=request.getRequestURI();
+    uri=uri.substring(uri.lastIndexOf("/")+1);
+    Integer num = new Integer(uri.replace("detail","").replace(".jsp",""));
+    System.out.println(uri);
     BlogMarkDownDaoImpl blogMarkDownDao = new BlogMarkDownDaoImpl();
-    BlogMarkDown blogMarkDown = blogMarkDownDao.get(5);
+    BlogMarkDown blogMarkDown = blogMarkDownDao.get(num);
 %>
 <div class="blog-body">
     <div class="blog-container">
@@ -248,7 +252,7 @@
                 <%
                     for(int i=0;i<data.length;i++){
                 %>
-                "<%=data[i].replace("\r\n","").replace("\"","\\\"").replace("\'","\\\'")%>" +
+                "<%=data[i].replace("\r\n","").replace("\n","").replace("\"","\\\"").replace("\'","\\\'")%>" +
                 "\n" +
                 <%
                     }

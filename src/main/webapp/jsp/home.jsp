@@ -3,7 +3,9 @@
 <%@ page import="java.util.List" %>
 <%@ page import="blog.dao.impl.LogDataImpl" %>
 <%@ page import="blog.domain.LogData" %>
-<%@ page import="java.util.ArrayList" %><%--
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="blog.dao.impl.MusicImpl" %>
+<%@ page import="blog.domain.Music" %><%--
   Created by IntelliJ IDEA.
   User: 13252
   Date: 2018/11/30
@@ -95,7 +97,7 @@
             <div class="blog-main-left">
                 <div class="article shadow">
                     <link rel="stylesheet" href="../dplayer/DPlayer.min.css">
-                    <div id="dplayer" style="width: 700px;height:400px;"></div>
+                    <div id="dplayer" style="width: 100%;height:60%;"></div>
                     <script src="../dplayer/DPlayer.min.js"></script>
                     <div class="clear"></div>
                     <%-- time --%>
@@ -107,10 +109,21 @@
                         <span class="article-viewinfo"><i class="fa fa-commenting"></i>&nbsp;5</span> <%--留言--%>
                     </div>
                 </div>
+                <div class="article shadow">
+
+                        <div class="article-title">
+                            <a href="">我喜欢的音乐</a>
+                        </div>
+                            <link rel="stylesheet" href="../aplayer/APlayer.min.css">
+                            <div id="aplist">
+                            </div>
+                            <script src="../aplayer/APlayer.min.js"></script>
+                    <div class="clear"></div>
+                </div>
             <%
                 BlogMarkDownDaoImpl blogMarkDownDao = new BlogMarkDownDaoImpl() ;
                 List<BlogMarkDown> list = blogMarkDownDao.listAll();
-                for(int i=0;i<list.size();i++){
+                for(int i=list.size()-1;i>=0;i--){
             %>
                 <div class="article shadow">
                     <div class="article-left">
@@ -142,10 +155,10 @@
             <div class="blog-main-right">
                 <div class="blogerinfo shadow">
                     <div class="blogerinfo-figure">
-                        <img src="../images/Absolutely.jpg" alt="Absolutely" />
+                        <img src="../images/Logo_100.png" alt="Absolutely" />
                     </div>
                     <p class="blogerinfo-nickname">AntzUhl</p>
-                    <p class="blogerinfo-introduce">河大程序员.</p>
+                    <p class="blogerinfo-introduce">大三的程序员.</p>
                     <p class="blogerinfo-location"><i class="fa fa-location-arrow"></i>&nbsp;四川 - 南充</p>
                     <hr />
                     <div class="blogerinfo-contact">
@@ -156,11 +169,11 @@
                     </div>
                 </div>
                 <div></div><!--占位-->
-                <div class="blog-module shadow">
+                <div class="blog-module shadow" style="height: 50%;">
                     <div class="blog-module-title">热文排行</div>
                     <ul class="fa-ul blog-module-ul">
                         <%
-                            for(int i=0;i<list.size();i++){
+                            for(int i=list.size()-1;i>=0;i--){
                         %>
                         <li><i class="fa-li fa fa-hand-o-right"></i><a href="<%=list.get(i).getLocalurl()%>"><%=list.get(i).getTitle()%></a></li>
                         <%
@@ -168,13 +181,13 @@
                         %>
                     </ul>
                 </div>
-                <div class="blog-module shadow">
+                <div class="blog-module shadow" style="height: 50%;">
                     <div class="blog-module-title">最近分享</div>
                     <ul class="fa-ul blog-module-ul">
-                        <li><i class="fa-li fa fa-hand-o-right"></i><a href="http://pan.baidu.com/s/1c1BJ6Qc" target="_blank">Canvas</a></li>
-                        <li><i class="fa-li fa fa-hand-o-right"></i><a href="http://pan.baidu.com/s/1kVK8UhT" target="_blank">pagesize.js</a></li>
-                        <li><i class="fa-li fa fa-hand-o-right"></i><a href="https://pan.baidu.com/s/1mit2aiW" target="_blank">时光轴</a></li>
-                        <li><i class="fa-li fa fa-hand-o-right"></i><a href="https://pan.baidu.com/s/1nuAKF81" target="_blank">图片轮播</a></li>
+                        <li><i class="fa-li fa fa-hand-o-right"></i><a href="https://github.com/CasterWx/python-girlfriend-mood" target="_blank">女朋友情绪分析</a></li>
+                        <li><i class="fa-li fa fa-hand-o-right"></i><a href="https://github.com/CasterWx/c-cPlusPlus-Virus" target="_blank">病毒</a></li>
+                        <li><i class="fa-li fa fa-hand-o-right"></i><a href="https://github.com/CasterWx/python-VoiceAssistant" target="_blank">语音管家</a></li>
+                        <li><i class="fa-li fa fa-hand-o-right"></i><a href="https://github.com/CasterWx/MFC-FingerPrint" target="_blank">指纹识别</a></li>
                     </ul>
                 </div>
                 <div class="blog-module shadow">
@@ -183,7 +196,7 @@
                         <%
                             LogDataImpl logData1 = new LogDataImpl() ;
                             List<LogData> logData = logData1.listAll();
-                            for(int i=0;i<logData.size();i++){
+                            for(int i=logData.size()-1;i>=0;i--){
                         %>
                         <dt><%=logData.get(i).getTime()%></dt>
                         <dd><%=logData.get(i).getTitle()%></dd>
@@ -192,18 +205,7 @@
                         %>
                     </dl>
                 </div>
-                <div class="blog-module shadow">
-                    <div class="blog-module-title">后台记录</div>
-                    <dl class="footprint">
-                        <dt>2018年10月16日</dt>
-                        <dd>分页新增页容量控制</dd>
-                        <dt>2018年09月12日</dt>
-                        <dd>新增时光轴</dd>
-                        <dt>2018年09月10日</dt>
-                        <dd>新增博客列表效果</dd>
-                    </dl>
-                </div>
-                <div class="blog-module shadow">
+                <div class="blog-module shadow" style="height: 50%;">
                     <div class="blog-module-title">友链</div>
                     <ul class="blogroll">
                         <li><a target="_blank" href="https://github.com/CasterWx" title="CasterWx">CasterWx</a></li>
@@ -258,35 +260,46 @@
 </div>
 <script src="../aplayer/APlayer.min.js"></script>
 <script>
+    audiodata = [
+        <%
+              MusicImpl music = new MusicImpl() ;
+              List<Music> musicList = music.listAll() ;
+              for(int i=0;i<musicList.size();i++){
+          %>
+        {
+            name: '<%=musicList.get(i).getName()%>',
+            artist: '<%=musicList.get(i).getArtist()%>',
+            lrc: '<%=musicList.get(i).getLrc()%>',
+            theme: '<%=musicList.get(i).getTheme()%>',
+            url: '<%=musicList.get(i).getUrl()%>',
+            cover: '<%=musicList.get(i).getCover()%>'
+        },
+        <%
+            }
+        %>
+    ]
+    const ap2 = new APlayer({
+        container: document.getElementById('aplist'),
+        listFolded: false,
+        listMaxHeight: 200,
+        lrcType: 3,
+        audio: audiodata
+    });
     const ap = new APlayer({
         container: document.getElementById('aplayer'),
         fixed: true,
         listFolded: false,
         listMaxHeight: 90,
         lrcType: 3,
-        audio: [{
-            name: 'カサネテク',
-            artist: '中关村二',
-            lrc: '../aplayer/darling.lrc',
-            theme: '#ebd0c2',
-            url: '../aplayer/music.mp3',
-            cover:  'http://p2.music.126.net/AWXPd_GVXCzUocAMyatE5Q==/760862046442975.jpg?param=130y130'
-        },{
-            name: 'カサネテク',
-            artist: '中关村二',
-            lrc: '../aplayer/darling.lrc',
-            url: '../aplayer/music.mp3',
-            theme: '#46718b',
-            cover:  'http://p2.music.126.net/AWXPd_GVXCzUocAMyatE5Q==/760862046442975.jpg?param=130y130'
-        }]
+        audio: audiodata
     });
     const dp = new DPlayer({
         container: document.getElementById('dplayer'),
         screenshot: true,
         video: {
-            url: 'https://moeplayer.b0.upaiyun.com/dplayer/hikarunara.mp4',
-            pic: 'demo.jpg',
-            thumbnails: 'thumbnails.jpg'
+            url: '../dplayer/world.execute(me).Mp4',
+            pic: '../images/cover/mili.jpg',
+            thumbnails: '../images/cover/mili.jpg'
         },
         subtitle: {
             url: 'webvtt.vtt'
