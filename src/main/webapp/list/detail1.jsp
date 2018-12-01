@@ -243,7 +243,6 @@
     });
 </script>
 <script type="text/javascript">
-    alert('<%=uri%>')
     <%
         String []data = blogMarkDown.getData().split("\r\n") ;
     %>
