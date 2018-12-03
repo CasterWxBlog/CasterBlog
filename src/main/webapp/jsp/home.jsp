@@ -190,13 +190,13 @@
                         <li><i class="fa-li fa fa-hand-o-right"></i><a href="https://github.com/CasterWx/MFC-FingerPrint" target="_blank">指纹识别</a></li>
                     </ul>
                 </div>
-                <div class="blog-module shadow">
+                <div class="blog-module shadow" style="height: 120%;">
                     <div class="blog-module-title">一路走来</div>
                     <dl class="footprint">
                         <%
                             LogDataImpl logData1 = new LogDataImpl() ;
                             List<LogData> logData = logData1.listAll();
-                            for(int i=logData.size()-1;i>=0;i--){
+                            for(int i=0;i<logData.size();i++){
                         %>
                         <dt><%=logData.get(i).getTime()%></dt>
                         <dd><%=logData.get(i).getTitle()%></dd>

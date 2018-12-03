@@ -109,7 +109,7 @@
                         <div class="layui-field-box">
                             <form class="layui-form blog-editor" action="">
                                 <div class="layui-form-item">
-                                    <textarea name="editorContent" lay-verify="content" id="remarkEditor" placeholder="请输入内容" class="layui-textarea layui-hide"></textarea>
+                                    <textarea name="editorContent" lay-verify="content" id="remarkEditor" placeholder="请输入内容(邮箱姓名写在里面即可)" class="layui-textarea layui-hide"></textarea>
                                 </div>
                                 <div class="layui-form-item">
                                     <button class="layui-btn" lay-submit="formRemark" lay-filter="formRemark">提交评论</button>

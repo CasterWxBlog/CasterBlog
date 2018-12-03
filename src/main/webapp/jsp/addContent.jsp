@@ -1,7 +1,8 @@
 <%@ page import="blog.dao.impl.CommentImpl" %>
 <%@ page import="blog.domain.Comment" %>
 <%@ page import="java.util.Date" %>
-<%@ page import="java.text.SimpleDateFormat" %><%--
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.net.URLDecoder" %><%--
   Created by IntelliJ IDEA.
   User: 13252
   Date: 2018/11/30
@@ -15,6 +16,7 @@
 </head>
 <body>
 <%
+    request.setCharacterEncoding("utf-8");
     SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     String url = request.getParameter("url");
     String content = request.getParameter("content");
