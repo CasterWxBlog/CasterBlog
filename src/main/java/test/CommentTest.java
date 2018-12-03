@@ -15,12 +15,12 @@ public class CommentTest {
     public void test(){
         CommentImpl commentimp = new CommentImpl() ;
         Comment comment = new Comment() ;
-        comment.setId(1);
-        comment.setUrl("/list/detail0.jsp");
+        //comment.setId(1);
+        comment.setUrl("/list/detail8.jsp");
         comment.setImgurl("../images/Absolutely.jpg");
         comment.setName("AntzUhl");
-        comment.setTime("2018-11-30-10:15");
-        comment.setContent("博主有女朋友嘛!");
+        comment.setTime("2018-12-3-19:42");
+        comment.setContent("你好!");
         commentimp.save(comment);
     }
 }

@@ -15,18 +15,11 @@
 	  <action name="article" class="blog.action.IndexAction">
 		  <result name="success">/jsp/article.jsp</result>
 	  </action>
-	  <action name="/list/detail_*.jsp" class="blog.action.BlogListAction">
-		  <result name="success">/list/detail.jsp</result>
-	  </action>
 	  <action name="resource" class="blog.action.IndexAction">
 		  <result name="success">/jsp/resource.jsp</result>
 	  </action>
 	  <action name="timeline" class="blog.action.IndexAction">
 		  <result name="success">/jsp/timeline.jsp</result>
 	  </action>
-	  <action name="addcontent" class="blog.action.IndexAction">
-		  <result name="addContent">/jsp/addContent.jsp</result>
-	  </action>
   </package>
-
 </struts>
