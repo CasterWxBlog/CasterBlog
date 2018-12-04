@@ -1,4 +1,6 @@
-<%--
+<%@ page import="blog.dao.impl.FriendLinkImpl" %>
+<%@ page import="blog.domain.FriendLink" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: 13252
   Date: 2018/11/30
@@ -155,13 +157,21 @@
                                 <legend>Friend Link</legend>
                                 <div class="layui-field-box">
                                     <ul class="friendlink">
+                                        <%
+                                            FriendLinkImpl friendLinkImpl = new FriendLinkImpl() ;
+                                            List<FriendLink> linkList = friendLinkImpl.listAll() ;
+                                            for (int i=0;i<linkList.size();i++){
+                                        %>
                                         <li>
-                                            <a target="_blank" href="https://github.com/hhw7080" title="Tory" class="friendlink-item">
-                                                <p class="friendlink-item-pic"><img src="https://avatars0.githubusercontent.com/u/44398306?s=460&v=4" alt="hhw" /></p>
-                                                <p class="friendlink-item-title">Tory</p>
-                                                <p class="friendlink-item-domain">https://github.com/hhw7080</p>
+                                            <a target="_blank" href="<%=linkList.get(i).getUrl()%>" title="<%=linkList.get(i).getName()%>" class="friendlink-item">
+                                                <p class="friendlink-item-pic"><img src="<%=linkList.get(i).getImg()%>" alt="friend" /></p>
+                                                <p class="friendlink-item-title"><%=linkList.get(i).getName()%></p>
+                                                <p class="friendlink-item-domain"><%=linkList.get(i).getUrl()%></p>
                                             </a>
                                         </li>
+                                        <%
+                                            }
+                                        %>
                                     </ul>
                                 </div>
                             </fieldset>
