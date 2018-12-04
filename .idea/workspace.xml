@@ -6,18 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64de7766-c80c-4fb1-9f1b-89ac869c4eff" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/blog/dao/IFriendLinkDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/blog/dao/impl/FriendLinkImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/blog/domain/FriendLink.hbm.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/blog/domain/FriendLink.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/test/FriendLinkTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/blog/dao/impl/CommentImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/blog/dao/impl/CommentImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/detail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/about.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/about.jsp" afterDir="false" />
-    </list>
+    <list default="true" id="64de7766-c80c-4fb1-9f1b-89ac869c4eff" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -120,8 +109,8 @@
       <file leaf-file-name="detail.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/js/detail.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="35" column="25" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
+            <state relative-caret-position="215">
+              <caret line="33" column="26" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -238,9 +227,9 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="777" />
-    <option name="y" value="82" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="243" />
+    <option name="y" value="-9" />
     <option name="width" value="1458" />
     <option name="height" value="983" />
   </component>
@@ -634,7 +623,7 @@
       <workItem from="1543833118964" duration="5781000" />
       <workItem from="1543847014503" duration="1122000" />
       <workItem from="1543848456063" duration="444000" />
-      <workItem from="1543889117887" duration="2313000" />
+      <workItem from="1543889117887" duration="2951000" />
     </task>
     <servers />
   </component>
@@ -671,11 +660,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63477000" />
+    <option name="totallyTimeSpent" value="64115000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" />
@@ -696,10 +684,10 @@
       <window_info anchor="bottom" id="Java Enterprise" order="10" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Version Control" order="12" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.17689015" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.17689015" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info id="Persistence" order="2" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16286863" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16286863" />
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info id="Favorites" order="6" side_tool="true" />
@@ -1113,8 +1101,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/js/detail.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="35" column="25" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
+        <state relative-caret-position="215">
+          <caret line="33" column="26" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
         </state>
       </provider>
     </entry>
