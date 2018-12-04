@@ -1,8 +1,8 @@
 package blog.dao.impl;
 
-import blog.dao.ICommentDAO;
-import blog.domain.BlogMarkDown;
+import blog.dao.IFriendLinkDAO;
 import blog.domain.Comment;
+import blog.domain.FriendLink;
 import blog.util.HibernateSession;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -14,63 +14,62 @@ import java.util.List;
  * @author CasterWx  AntzUhl
  * @site https://github.com/CasterWx
  * @company Henu
- * @create 2018-11-30-10:07
+ * @create 2018-12-04-10:12
  */
-public class CommentImpl implements ICommentDAO {
-
-    public void save(Comment comment) {
+public class FriendLinkImpl implements IFriendLinkDAO {
+    public void save(FriendLink friendLink) {
         HibernateSession hibernateSession = new HibernateSession() ;
         hibernateSession.initSession();
         Session session = hibernateSession.getSession() ;
         Transaction transaction = session.getTransaction() ;
         transaction.begin();
-        session.save(comment);
+        session.save(friendLink);
         transaction.commit();
         session.close() ;
         hibernateSession.closeSession();
     }
 
-    public void update(Comment comment) {
+    public void update(FriendLink friendLink) {
         HibernateSession hibernateSession = new HibernateSession() ;
         hibernateSession.initSession();
         Session session = hibernateSession.getSession() ;
         Transaction transaction = session.getTransaction() ;
         transaction.begin();
-        session.update(comment);
+        session.update(friendLink);
         transaction.commit();
         session.close() ;
         hibernateSession.closeSession();
     }
 
-    public void delete(Comment comment) {
+    public void delete(FriendLink friendLink) {
         HibernateSession hibernateSession = new HibernateSession() ;
         hibernateSession.initSession();
         Session session = hibernateSession.getSession() ;
         Transaction transaction = session.getTransaction() ;
         transaction.begin();
-        session.delete(comment);
+        session.delete(friendLink);
         transaction.commit();
         session.close() ;
         hibernateSession.closeSession();
     }
 
-    public Comment get(Integer id) {
+    public FriendLink get(Integer id) {
         HibernateSession hibernateSession = new HibernateSession() ;
         hibernateSession.initSession();
         Session session = hibernateSession.getSession() ;
-        Comment comment = (Comment) session.get(Comment.class,id);
+        FriendLink friendLink = (FriendLink) session.get(FriendLink.class,id);
         session.close() ;
         hibernateSession.closeSession();
-        return comment;
+        return friendLink;
     }
 
-    public List<Comment> listAll() {
+    public List<FriendLink> listAll() {
         HibernateSession hibernateSession = new HibernateSession() ;
         hibernateSession.initSession();
         Session session = hibernateSession.getSession();
-        String hql = "SELECT  u FROM Comment u" ;
+        String hql = "SELECT  u FROM FriendLink u" ;
         Query query = session.createQuery(hql) ;
-        List<Comment> list = query.list() ;
+        List<FriendLink> list = query.list() ;
         session.close();
         hibernateSession.closeSession();
         return list;

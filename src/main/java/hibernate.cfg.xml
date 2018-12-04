@@ -20,5 +20,6 @@
 		<mapping resource="blog/domain/BlogMarkDown.hbm.xml"/>
 		<mapping resource="blog/domain/Comment.hbm.xml"/>
 		<mapping resource="blog/domain/Music.hbm.xml"/>
+		<mapping resource="blog/domain/FriendLink.hbm.xml"/>
 	</session-factory>
 </hibernate-configuration>
