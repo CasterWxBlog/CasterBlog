@@ -1,6 +1,8 @@
 <%@ page import="blog.dao.impl.BlogMarkDownDaoImpl" %>
 <%@ page import="blog.domain.BlogMarkDown" %>
-<%@ page import="java.util.List" %><%--
+<%@ page import="java.util.List" %>
+<%@ page import="blog.dao.impl.MusicImpl" %>
+<%@ page import="blog.domain.Music" %><%--
   Created by IntelliJ IDEA.
   User: 13252
   Date: 2018/11/30
@@ -188,14 +190,31 @@
 </div>
 <script src="../aplayer/APlayer.min.js"></script>
 <script>
+    audiodata = [
+        <%
+              MusicImpl music = new MusicImpl() ;
+              List<Music> musicList = music.listAll() ;
+              for(int i=0;i<musicList.size();i++){
+          %>
+        {
+            name: '<%=musicList.get(i).getName()%>',
+            artist: '<%=musicList.get(i).getArtist()%>',
+            lrc: '<%=musicList.get(i).getLrc()%>',
+            theme: '<%=musicList.get(i).getTheme()%>',
+            url: '<%=musicList.get(i).getUrl()%>',
+            cover: '<%=musicList.get(i).getCover()%>'
+        },
+        <%
+            }
+        %>
+    ]
     const ap = new APlayer({
         container: document.getElementById('aplayer'),
-        audio: [{
-            name: 'カサネテク',
-            artist: '中关村二',
-            url: '../aplayer/music.mp3',
-            cover:  'http://p2.music.126.net/AWXPd_GVXCzUocAMyatE5Q==/760862046442975.jpg?param=130y130'
-        }]
+        fixed: true,
+        listFolded: false,
+        listMaxHeight: 90,
+        lrcType: 3,
+        audio: audiodata
     });
 </script>
 <!--遮罩-->

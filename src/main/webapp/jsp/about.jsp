@@ -1,6 +1,9 @@
 <%@ page import="blog.dao.impl.FriendLinkImpl" %>
 <%@ page import="blog.domain.FriendLink" %>
-<%@ page import="java.util.List" %><%--
+<%@ page import="java.util.List" %>
+<%@ page import="blog.dao.impl.MusicImpl" %>
+<%@ page import="blog.domain.Music" %>
+<%--
   Created by IntelliJ IDEA.
   User: 13252
   Date: 2018/11/30
@@ -289,6 +292,38 @@
         </div>
     </div>
 </div>
+<link rel="stylesheet" href="../aplayer/APlayer.min.css">
+<div id="aplayer" style="align:center;width:500px;position:fixed; bottom:0; z-index:999;  overflow:visible;">
+</div>
+<script src="../aplayer/APlayer.min.js"></script>
+<script>
+    audiodata = [
+        <%
+              MusicImpl music = new MusicImpl() ;
+              List<Music> musicList = music.listAll() ;
+              for(int i=0;i<musicList.size();i++){
+          %>
+        {
+            name: '<%=musicList.get(i).getName()%>',
+            artist: '<%=musicList.get(i).getArtist()%>',
+            lrc: '<%=musicList.get(i).getLrc()%>',
+            theme: '<%=musicList.get(i).getTheme()%>',
+            url: '<%=musicList.get(i).getUrl()%>',
+            cover: '<%=musicList.get(i).getCover()%>'
+        },
+        <%
+            }
+        %>
+    ]
+    const ap = new APlayer({
+        container: document.getElementById('aplayer'),
+        fixed: true,
+        listFolded: false,
+        listMaxHeight: 90,
+        lrcType: 3,
+        audio: audiodata
+    });
+</script>
 <!--遮罩-->
 <div class="blog-mask animated layui-hide"></div>
 <!-- layui.js -->
