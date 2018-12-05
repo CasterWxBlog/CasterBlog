@@ -18,6 +18,9 @@
 	  <action name="resource" class="blog.action.IndexAction">
 		  <result name="success">/jsp/resource.jsp</result>
 	  </action>
+	  <action name="frag" class="blog.action.IndexAction">
+		  <result name="success">/jsp/frag.jsp</result>
+	  </action>
 	  <action name="timeline" class="blog.action.IndexAction">
 		  <result name="success">/jsp/timeline.jsp</result>
 	  </action>
