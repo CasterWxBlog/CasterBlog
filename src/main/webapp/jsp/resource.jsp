@@ -30,7 +30,7 @@
 <nav class="blog-nav layui-header">
     <div class="blog-container">
         <!-- QQ互联登陆 -->
-        <a href="javascript:;" class="blog-user">
+        <a href="/frag" class="blog-user">
             <i class="fa fa-qq"></i>
         </a>
         <a href="javascript:;" class="blog-user layui-hide">
