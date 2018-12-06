@@ -1,3 +1,4 @@
+
 function ctrMixin(frag3d) {
     frag3d.prototype.taskQueue = [];
     frag3d.prototype.damping = function(key, callback) {
