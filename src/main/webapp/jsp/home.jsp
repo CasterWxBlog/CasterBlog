@@ -110,7 +110,6 @@
                     </div>
                 </div>
                 <div class="article shadow">
-
                         <div class="article-title">
                             <a href="">我喜欢的音乐</a>
                         </div>
@@ -306,7 +305,7 @@
         },
         danmaku: {
             id: 'demo',
-            api: 'https://api.prprpr.me/dplayer/v3/bilibili?aid=4124125'
+            api: 'https://api.prprpr.me/dplayer/v3/bilibili?aid=325253'
         }
     });
 </script>

@@ -8,15 +8,18 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <meta charset=utf-8>
+    <meta http-equiv="Content-Type" content="text/html; Charset=gb2312">
+    <meta http-equiv="Content-Language" content="zh-CN">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>CasterWx - 一群肥宅的博客网站</title>
+    <link rel="shortcut icon" href="../images/Logo_40.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="../frag3d/main.css"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-    <title>破碎空涅</title>
 </head>
 <body style="color: #000;background:url(https://www.cnblogs.com/images/cnblogs_com/LexMoon/1246510/o_header-mai.jpg) fixed; background-size: cover;background-repeat: repeat;font-size: 15px;min-height: 101%;">
-<div class="content">
+<div id="extension" class="content">
 </div>
 <canvas id="renderer" width="100%" height="100%"></canvas>
+
 <script id="gpgpu-vs" type="x-shader/x-vertex">
             attribute vec3  a_Position;
             attribute vec2  a_texCoord;
@@ -151,6 +154,16 @@
 <script src="../frag3d/render.js"></script>
 <script src="../frag3d/control.js"></script>
 <script src="../frag3d/frag3d.js"></script>
-
+<script>
+    a = $(window).height();    //浏览器窗口高度
+    $(window).scroll(function(){
+        b = $(this).scrollTop();   //页面滚动的高度
+        c = $('div').height() / 4 * 3;
+        if(a+b>c){
+            window.location.href="/home"
+        }else{
+        }
+    });
+</script>
 </body>
 </html>
