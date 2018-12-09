@@ -156,11 +156,15 @@
 <script src="../frag3d/frag3d.js"></script>
 <script>
     a = $(window).height();    //浏览器窗口高度
+    var flag = 1 ;
     $(window).scroll(function(){
         b = $(this).scrollTop();   //页面滚动的高度
         c = $('div').height() / 4 * 3;
         if(a+b>c){
-            window.location.href="/home"
+            if(flag){
+                flag = 0 ;
+                window.location.href="/home"
+            }
         }else{
         }
     });
