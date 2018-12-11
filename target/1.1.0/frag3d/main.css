@@ -1,0 +1,64 @@
+@font-face {
+    font-family: "custom-play";
+    src: url('play.woff2') format('woff');
+}
+@font-face {
+    font-family: "custom-dig";
+    src: url('digital_(mono).ttf') format('truetype');
+}
+body {
+	width: 100%;
+	padding: 0;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+    position: absolute;
+    margin: 0;
+	background-color: #ededed;
+	display: flex;
+	justify-content: center;
+}
+
+.gray {
+	filter: grayscale(100%);
+}
+
+
+:root{
+	--window-width: 720;
+	--window-height: 480;
+}
+
+.content {
+	height: 6000px;
+	width: 100%;
+	justify-content: center;
+}
+
+.content > .title {
+	color: #ededed;
+	height: calc(var(--window-height) * 1px);
+	text-shadow: 0 0 30px #333;
+	display: flex;
+	font-size: 6em;
+	font-family: Arial, Helvetica, sans-serif;
+	justify-content: center;
+	align-items: center;
+}
+.content > .label {
+	align-items: flex-start;
+	color: #FF5722;
+}
+
+#renderer {
+	position: fixed;
+	top: 0;
+	left: 0;
+	/* background-color: rgb(218, 218, 218); */
+	width: calc(var(--window-width) * 1px);
+	height: calc(var(--window-height) * 1px);
+	z-index: -1;
+}
+
+.github-corner {
+	position: fixed;
+	right: 0;
+}

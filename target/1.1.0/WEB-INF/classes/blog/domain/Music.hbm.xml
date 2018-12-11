@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="blog.domain">
+	<class name="Music" table="t_music">
+		<id name="id" type="java.lang.Integer" column="id">
+			<generator class="native"/>
+		</id>
+		<property name="name" column="name"/>
+		<property name="artist" column="artist"/>
+		<property name="lrc" column="lrc"/>
+		<property name="theme" column="theme"/>
+		<property name="url" column="url"/>
+		<property name="cover" column="cover"/>
+	</class>
+</hibernate-mapping>
