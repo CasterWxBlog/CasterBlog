@@ -15,7 +15,7 @@
     <link rel="shortcut icon" href="../images/Logo_40.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="../frag3d/main.css"/>
 </head>
-<body style="color: #000;background:url(https://www.cnblogs.com/images/cnblogs_com/LexMoon/1246510/o_header-mai.jpg) fixed; background-size: cover;background-repeat: repeat;font-size: 15px;min-height: 101%;">
+<body style="background:url(../images/cover/header-mai.jpg) fixed; background-size: cover;background-repeat: repeat;font-size: 15px;min-height: 101%;">
 <div id="extension" class="content">
 </div>
 <canvas id="renderer" width="100%" height="100%"></canvas>
@@ -159,7 +159,7 @@
     var flag = 1 ;
     $(window).scroll(function(){
         b = $(this).scrollTop();   //页面滚动的高度
-        c = $('div').height() / 4 * 3;
+        c = $('div').height() / 4;
         if(a+b>c){
             if(flag){
                 flag = 0 ;
