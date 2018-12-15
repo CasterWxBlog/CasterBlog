@@ -221,7 +221,7 @@
               MusicImpl music = new MusicImpl() ;
               List<Music> musicList = music.listAll() ;
               for(int i=0;i<musicList.size();i++){
-          %>
+        %>
         {
             name: '<%=musicList.get(i).getName()%>',
             artist: '<%=musicList.get(i).getArtist()%>',
@@ -253,8 +253,7 @@
                 <%
                     for(int i=0;i<data.length;i++){
                 %>
-                "<%=data[i].replace("\r\n","").replace("\n","").replace("\"","\\\"").replace("\'","\\\'")%>" +
-                "\n" +
+                "<%=data[i].replace("\r\n","").replace("\n","").replace("\"","\\\"").replace("\'","\\\'")%>\r\n"
                 <%
                     }
                 %>
